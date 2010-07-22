@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     else  
     
       if params[:service] == "twitter"
-        request_token = consumer.get_request_token({:oauth_callback => "#{oauth_callback_url}&service=twitter"})
+        request_token = consumer.get_request_token({:oauth_callback => twitter_callback_url})
       else
         # soundcloud consumer...
       end
