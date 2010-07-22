@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   protected
   
   def consumer
-    @consumer ||= OAuth::Consumer.new("D9tonxAqgH73v3h3bIPNTA", "hfcEuzoHRSKDVzaPkxQZHrX3bDjOHnNtaGIEnMw", {:site => 'https://twitter.com'})
+    @consumer ||= OAuth::Consumer.new("D9tonxAqgH73v3h3bIPNTA", "hfcEuzoHRSKDVzaPkxQZHrX3bDjOHnNtaGIEnMw", :site => 'https://twitter.com')
   end
   
   def client
