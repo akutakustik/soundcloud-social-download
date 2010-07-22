@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
-  def logged_in_facebook?
-    session[:facebook] ? true : false
-  end
-  
   protected
   
   def consumer(service)
