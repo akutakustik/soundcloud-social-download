@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     else  
     
       if params[:service] == "twitter"
-        request_token = consumer.get_request_token({:oauth_callback => oauth_callback_url})
+        request_token = consumer.get_request_token({:oauth_callback => "#{oauth_callback_url}&service=twitter"})
       else
         # soundcloud consumer...
       end
@@ -25,30 +25,36 @@ class SessionsController < ApplicationController
 
   def oauth_callback
     
-    request_token = OAuth::RequestToken.new(consumer, session[:request_token], session[:request_token_secret])
+    if params[:service] == "facebook"
+      
+      access_token = client.web_server.get_access_token(params[:code], :redirect_uri => oauth_callback_url)
+
+      session[:facebook] = access_token.token
+
+      flash[:notice] = 'You have logged into Facebook.'
+      redirect_to root_path
+      
+    else #if params[:service] == "twitter"
+      
+      render :text => params.inspect
+      
+=begin      
     
-    access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
+      request_token = OAuth::RequestToken.new(consumer, session[:request_token], session[:request_token_secret])
     
-    session[:request_token] = nil
-    session[:request_token_secret] = nil
+      access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
     
-    session[:twitter] = {:token => access_token.token, :secret => access_token.secret}
+      session[:request_token] = nil
+      session[:request_token_secret] = nil
     
-    #flash[:notice] = 'You have logged into Twitter.'
-    #redirect_to root_path
+      session[:twitter] = {:token => access_token.token, :secret => access_token.secret}
     
-=begin    
-    
-    access_token = client.web_server.get_access_token(
-      params[:code], :redirect_uri => oauth_callback_url
-    )
-    
-    session[:facebook] = access_token.token
-    
-    flash[:notice] = 'You have logged into Facebook.'
-    redirect_to root_path
-    
-=end    
+      flash[:notice] = 'You have logged into Twitter.'
+      redirect_to root_path
+      
+=end
+      
+    end
     
   end
 
