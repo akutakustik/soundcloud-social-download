@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     
     if params[:service] == "facebook"
     
-      redirect_to client.web_server.authorize_url(:redirect_uri => oauth_callback_url, :scope => 'publish_stream')
+      redirect_to client.web_server.authorize_url(:redirect_uri => facebook_callback_url, :scope => 'publish_stream')
     
     else  
     
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     
     if params[:service] == "facebook"
       
-      access_token = client.web_server.get_access_token(params[:code], :redirect_uri => oauth_callback_url)
+      access_token = client.web_server.get_access_token(params[:code], :redirect_uri => facebook_callback_url)
 
       session[:facebook] = access_token.token
 
