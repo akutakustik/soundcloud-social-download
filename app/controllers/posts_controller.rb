@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   
   def new
     
+    #puts session[:twitter].get('/statuses/friends_timeline.json')
+    
     #puts Facebook.new(session[:facebook]).class.get('/me')
     
   end
