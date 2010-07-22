@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   
   def new
     
-    session[:facebook], session[:twitter], session[:soundcloud] = nil
+    reset_session
     
     if params[:service] == "facebook"
     
@@ -47,7 +47,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:facebook], session[:twitter], session[:soundcloud] = nil
+    reset_session
     redirect_to root_path
   end
 
