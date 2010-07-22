@@ -11,5 +11,10 @@
 	%p
 		= link_to "Facebook", "#"
 		= link_to "Twitter", "#"
+		
+	- if logged_in_facebook?
+		logged in facebook
+	- else
+		false
 
 

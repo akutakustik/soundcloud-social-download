@@ -21,7 +21,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # session[:user_id] = nil
+    session[:facebook] = nil
+    redirect_to root_path
   end
   
   protected
