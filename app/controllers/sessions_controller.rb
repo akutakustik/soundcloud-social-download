@@ -22,13 +22,13 @@ class SessionsController < ApplicationController
 
   def oauth_callback
     
-    if params[:service] == "facebook"
+    if params[:service] == "facebook" # facebook
       
       access_token = client.web_server.get_access_token(params[:code], :redirect_uri => oauth_callback_url("facebook"))
 
       session[:facebook] = access_token.token
       
-    else
+    else # twitter or soundcloud
       
       request_token = OAuth::RequestToken.new(consumer(params[:service]), session[:request_token], session[:request_token_secret])
       
