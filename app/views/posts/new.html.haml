@@ -12,6 +12,11 @@
 		= link_to "Facebook", "#"
 		= link_to "Twitter", "#"
 		
-	-# if logged_in("twitter")
+	- if logged_in("facebook")
+		facebook
+	- elsif logged_in("twitter")
+		twitter
+	- elsif logged_in("soundcloud")
+		soundcloud
 
 

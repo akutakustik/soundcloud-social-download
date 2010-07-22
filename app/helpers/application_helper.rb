@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def logged_in(service)
-    session[service] ? true : false
+    session[service.to_sym] ? true : false
   end
   
 end

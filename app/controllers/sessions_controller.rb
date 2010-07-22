@@ -35,12 +35,8 @@ class SessionsController < ApplicationController
       access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
     
       session[:request_token], session[:request_token_secret] = nil
-      
-      if params[:service] == "twitter"
-        session[:twitter] = {:token => access_token.token, :secret => access_token.secret}
-      else
-        session[:soundcloud] = {:token => access_token.token, :secret => access_token.secret}
-      end
+
+      session[params[:service].to_sym] = {:token => access_token.token, :secret => access_token.secret}
       
     end
     
