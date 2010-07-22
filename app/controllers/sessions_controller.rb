@@ -5,10 +5,14 @@ class SessionsController < ApplicationController
     if params[:service] == "facebook"
     
       redirect_to client.web_server.authorize_url(:redirect_uri => oauth_callback_url, :scope => 'publish_stream')
-      
-    elsif params[:service] == "twitter"
-      
-      request_token = consumer.get_request_token({:oauth_callback => oauth_callback_url})
+    
+    else  
+    
+      if params[:service] == "twitter"
+        request_token = consumer.get_request_token({:oauth_callback => oauth_callback_url})
+      else
+        # soundcloud consumer...
+      end
       
       session[:request_token] = request_token.token
       session[:request_token_secret] = request_token.secret
