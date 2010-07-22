@@ -1,7 +1,7 @@
 module ApplicationHelper
   
-  def logged_in_facebook?
-    session[:facebook] ? true : false
+  def logged_in(service)
+    session[service] ? true : false
   end
   
 end
