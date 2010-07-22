@@ -71,18 +71,5 @@ class SessionsController < ApplicationController
     )
     
   end
-  
-  def consumer
-    
-    @consumer ||= OAuth::Consumer.new(
-      "D9tonxAqgH73v3h3bIPNTA", "hfcEuzoHRSKDVzaPkxQZHrX3bDjOHnNtaGIEnMw", {
-        :site => 'https://twitter.com',
-        :authorize_path => '/oauth/authenticate',
-        :request_token_path => '/oauth/request_token',
-        :access_token_path => '/oauth/access_token'
-      }
-    )
-    
-  end
 
 end

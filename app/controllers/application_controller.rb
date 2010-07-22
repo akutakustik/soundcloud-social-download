@@ -12,4 +12,14 @@ class ApplicationController < ActionController::Base
     session[:facebook] ? true : false
   end
   
+  protected
+  
+  def consumer
+    
+    @consumer ||= OAuth::Consumer.new(
+      "D9tonxAqgH73v3h3bIPNTA", "hfcEuzoHRSKDVzaPkxQZHrX3bDjOHnNtaGIEnMw", {:site => 'https://twitter.com'}
+    )
+    
+  end
+  
 end
