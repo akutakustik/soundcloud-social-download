@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
   
   def new
     
+    session[:facebook], session[:twitter], session[:soundcloud] = nil
+    
     if params[:service] == "facebook"
     
       redirect_to client.web_server.authorize_url(:redirect_uri => oauth_callback_url("facebook"), :scope => 'publish_stream')
