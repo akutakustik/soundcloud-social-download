@@ -6,6 +6,14 @@ class PostsController < ApplicationController
     
     #puts Facebook.new(session[:facebook]).class.get('/me')
     
+    #puts session[:twitter].inspect
+    
+    #@access_token = OAuth::AccessToken.new(consumer("twitter"), session[:twitter][:token], session[:twitter][:secret])
+    
+    #puts @access_token.get('/account/verify_credentials.json')
+    
+    #puts @access_token.post('/statuses/update.json', {:status => "testing 1 2 3"})
+    
   end
 
   def create
