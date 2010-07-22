@@ -13,6 +13,8 @@ class SessionsController < ApplicationController
       params[:code], :redirect_uri => oauth_callback_url
     )
     
+    session[:facebook] = access_token.token
+    
     # access_token.token
     
     flash[:notice] = 'You have logged into Facebook.'
