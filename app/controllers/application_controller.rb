@@ -6,15 +6,11 @@ class ApplicationController < ActionController::Base
   protected
   
   def consumer(service)
-    if service == "twitter"
-      @consumer ||= OAuth::Consumer.new(config['twitter']['key'], config['twitter']['secret'], :site => 'https://twitter.com')
-    elsif service == "soundcloud"
-      @consumer ||= OAuth::Consumer.new(config['soundcloud']['key'], config['soundcloud']['secret'], :site => 'http://api.soundcloud.com')
-    end
+    @consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'])
   end
   
   def client
-    @client ||= OAuth2::Client.new(config['facebook']['app_id'], config['facebook']['secret'], :site => 'https://graph.facebook.com')
+    @client ||= OAuth2::Client.new(config['facebook']['app_id'], config['facebook']['secret'], :site => config['facebook']['base_url'])
   end
   
   def config
