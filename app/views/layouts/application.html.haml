@@ -5,5 +5,7 @@
 		= stylesheet_link_tag 'application'
 		= javascript_include_tag :defaults
 	%body
+	
+		= "<p id='notice' style='color:green;'>#{flash[:notice]}</p>" if flash[:notice]
 
 		= yield
