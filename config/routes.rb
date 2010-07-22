@@ -6,8 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :posts
   
-  map.twitter_callback '/oauth_callback/twitter', :controller => 'sessions', :action => 'oauth_callback', :service => 'twitter'
-  map.facebook_callback '/oauth_callback/facebook', :controller => 'sessions', :action => 'oauth_callback', :service => 'facebook'
+  map.oauth_callback '/oauth_callback/:service', :controller => 'sessions', :action => 'oauth_callback'
   
   map.root :controller => "posts", :action => "new"
 

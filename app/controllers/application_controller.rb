@@ -14,8 +14,12 @@ class ApplicationController < ActionController::Base
   
   protected
   
-  def consumer
-    @consumer ||= OAuth::Consumer.new("D9tonxAqgH73v3h3bIPNTA", "hfcEuzoHRSKDVzaPkxQZHrX3bDjOHnNtaGIEnMw", :site => 'https://twitter.com')
+  def consumer(service)
+    if service == "twitter"
+      @consumer ||= OAuth::Consumer.new("D9tonxAqgH73v3h3bIPNTA", "hfcEuzoHRSKDVzaPkxQZHrX3bDjOHnNtaGIEnMw", :site => 'https://twitter.com')
+    elsif service == "soundcloud"
+      @consumer ||= OAuth::Consumer.new("J8aFr3h5xyOSkYxsJMYXQ", "cCysasMDFSo8ErnCaAJQzpl8LUrkoziAVSTvzOhJWc", :site => 'http://api.soundcloud.com')
+    end
   end
   
   def client
