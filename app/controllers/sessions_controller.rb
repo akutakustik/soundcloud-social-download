@@ -28,12 +28,7 @@ class SessionsController < ApplicationController
     session[:request_token] = nil
     session[:request_token_secret] = nil
     
-    #render :text => access_token.token
-    
     session[:twitter] = {:token => access_token.token, :secret => access_token.secret}
-    
-    #session[:twitter] = access_token.token
-    #session[:twitter][:secret] = access_token.secret
     
     #flash[:notice] = 'You have logged into Twitter.'
     #redirect_to root_path
