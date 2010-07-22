@@ -14,8 +14,7 @@ class SessionsController < ApplicationController
         # soundcloud consumer...
       end
       
-      session[:request_token] = request_token.token
-      session[:request_token_secret] = request_token.secret
+      session[:request_token], session[:request_token_secret] = request_token.token, request_token.secret
       
       redirect_to request_token.authorize_url
       
@@ -30,37 +29,29 @@ class SessionsController < ApplicationController
       access_token = client.web_server.get_access_token(params[:code], :redirect_uri => facebook_callback_url)
 
       session[:facebook] = access_token.token
-
-      flash[:notice] = 'You have logged into Facebook.'
-      redirect_to root_path
       
-    else #if params[:service] == "twitter"
+    else
       
-      render :text => params.inspect
+      if params[:service] == "twitter"
+        request_token = OAuth::RequestToken.new(consumer, session[:request_token], session[:request_token_secret])
+      else
+        # soundcloud consumer...
+      end
       
-=begin      
-    
-      request_token = OAuth::RequestToken.new(consumer, session[:request_token], session[:request_token_secret])
-    
       access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
     
-      session[:request_token] = nil
-      session[:request_token_secret] = nil
+      session[:request_token], session[:request_token_secret] = nil
     
       session[:twitter] = {:token => access_token.token, :secret => access_token.secret}
-    
-      flash[:notice] = 'You have logged into Twitter.'
-      redirect_to root_path
-      
-=end
       
     end
+    
+    redirect_to root_path
     
   end
 
   def destroy
-    session[:facebook] = nil
-    session[:twitter] = nil
+    session[:facebook], session[:twitter] = nil
     redirect_to root_path
   end
 
