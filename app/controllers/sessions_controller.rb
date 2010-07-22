@@ -15,8 +15,6 @@ class SessionsController < ApplicationController
     
     session[:facebook] = access_token.token
     
-    # access_token.token
-    
     flash[:notice] = 'You have logged into Facebook.'
     redirect_to root_path
     
