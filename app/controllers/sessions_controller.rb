@@ -53,18 +53,5 @@ class SessionsController < ApplicationController
     session[:twitter] = nil
     redirect_to root_path
   end
-  
-  protected
-  
-  def client
-    
-    # config = YAML.load(File.open(RAILS_ROOT + '/config/facebook_auth.yml').read)[RAILS_ENV]
-    
-    @client ||= OAuth2::Client.new(
-      # config['app_id'], config['secret'], :site => 'https://graph.facebook.com'
-      "130178800328203", "82933a3c53aaf5cb027ec0ee6ced6c87", :site => 'https://graph.facebook.com'
-    )
-    
-  end
 
 end
