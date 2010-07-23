@@ -7,16 +7,15 @@
 	%h2 Download "Scars on Broadway"
 	
 	%p Just click below to tell your Facebook or Twitter friends about Scars on Broadway
-	
-	%p
-		= link_to "Facebook", "#"
-		= link_to "Twitter", "#"
 		
-	- if logged_in("facebook")
-		facebook
-	- elsif logged_in("twitter")
-		twitter
-	- elsif logged_in("soundcloud")
-		soundcloud
+	%p
+		
+		- if logged_in("facebook")
+			= link_to "Share to Unlock", "#"
+		- elsif logged_in("twitter")
+			= link_to "Tweet to Unlock", "#"
+		-else
+			= link_to "Facebook", login_path("facebook")
+			= link_to "Twitter", login_path("twitter")
 
 
