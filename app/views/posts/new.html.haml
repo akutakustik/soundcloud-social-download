@@ -11,11 +11,11 @@
 	%p
 		
 		- if logged_in("facebook")
-			= link_to "Share to Unlock", "#"
+			= link_to "Share to Unlock", "#", :class => "button"
 		- elsif logged_in("twitter")
-			= link_to "Tweet to Unlock", "#"
+			= link_to "Tweet to Unlock", "#", :class => "button"
 		-else
-			= link_to "Facebook", login_path("facebook")
-			= link_to "Twitter", login_path("twitter")
+			= link_to "Facebook", login_path("facebook"), :class => "button"
+			= link_to "Twitter", login_path("twitter"), :class => "button"
 
 
