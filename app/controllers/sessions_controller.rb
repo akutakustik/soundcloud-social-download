@@ -40,7 +40,7 @@ class SessionsController < ApplicationController
       
     end
     
-    flash[:notice] = "you have logged into #{params[:service]}"
+    # flash[:notice] = "you have logged into #{params[:service]}"
     
     redirect_to root_path
     
