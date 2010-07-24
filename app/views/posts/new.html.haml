@@ -17,6 +17,8 @@
 		= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
 		
 	- if session[:user]
+	
+		- session[:user][:service] == "facebook" ? @count = "420" : @count = "140"
 
 		%div#form{:style => "display:none"}
 
@@ -24,12 +26,10 @@
 
 				= f.hidden_field :service, :value => session[:user][:service]
 
-				%h3.fl= f.label :text, "Update"
-				%h3#count.fr
-					= session[:user][:service] == "facebook" ? @count = "420" : @count = "140"
-				%div.clear
+				%h3.fl= f.label :text, "Update Your Status"
+				%h3#count.fr= @count
 
-				%p= f.text_area :text, :rows => 4, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});"
+				%p.clear= f.text_area :text, :rows => 4, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});"
 				
 				%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
 				%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"
