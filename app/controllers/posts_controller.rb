@@ -32,11 +32,9 @@ class PostsController < ApplicationController
 
   def create
     
-    flash[:notice] = params[:post]
+    @post = params[:post]
     
-    redirect_to root_path
-    
-    if logged_in("facebook")
+    if @post["service"] == "facebook"
       
 =begin      
       
@@ -51,13 +49,17 @@ class PostsController < ApplicationController
         }
       )
       
-=end      
+=end 
       
-    elsif logged_in("twitter")
+    elsif @post["service"] == "twitter"
       
       # puts @access_token.post('/statuses/update.json', {:status => "testing 1 2 3"})
       
     end
+    
+    flash[:notice] = "thanks for posting to #{@post["service"]}"
+    
+    redirect_to root_path
     
   end
 
