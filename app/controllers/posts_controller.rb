@@ -28,22 +28,28 @@ class PostsController < ApplicationController
     
     redirect_to root_path
     
-=begin
-
-#puts @access_token.post('/statuses/update.json', {:status => "testing 1 2 3"})
-
-response = Facebook.new(session[:facebook]).class.post('/me/feed', 
-  :query => {
-    :message => "testing social download",
-    #:picture => @product.image("compact"),
-    :link => root_url,
-    :name => "social download"
-    #:caption
-    #:description
-  }
-)
-
-=end    
+    if logged_in("facebook")
+      
+=begin      
+      
+      response = Facebook.new(session[:facebook]).class.post('/me/feed', 
+        :query => {
+          :message => "testing social download",
+          #:picture => @product.image("compact"),
+          :link => root_url,
+          :name => "social download"
+          #:caption
+          #:description
+        }
+      )
+      
+=end      
+      
+    elsif logged_in("twitter")
+      
+      # puts @access_token.post('/statuses/update.json', {:status => "testing 1 2 3"})
+      
+    end
     
   end
 
