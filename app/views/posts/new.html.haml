@@ -9,9 +9,9 @@
 	%p Just click below to tell your Facebook or Twitter friends about Scars on Broadway
 		
 	- if logged_in("facebook")
-		= link_to "Share to Unlock", "#form", :class => "button glow", :rel => "facebox"
+		= link_to "Share to Download", "#form", :class => "button glow", :rel => "facebox"
 	- elsif logged_in("twitter")
-		= link_to "Tweet to Unlock", "#form", :class => "button glow", :rel => "facebox"
+		= link_to "Tweet to Download", "#form", :class => "button glow", :rel => "facebox"
 	-else
 		= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :title => "Login with Facebook", :class => "button"
 		= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
