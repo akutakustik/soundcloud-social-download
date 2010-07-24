@@ -82,34 +82,20 @@
       loadingImage : '/facebox/loading.gif',
       closeImage   : '/facebox/closelabel.gif',
       imageTypes   : [ 'png', 'jpg', 'jpeg', 'gif' ],
-      faceboxHtml  : '\
-    <div id="facebox" style="display:none;"> \
-      <div class="popup"> \
-        <table> \
-          <tbody> \
-            <tr> \
-              <td class="tl"/><td class="b"/><td class="tr"/> \
-            </tr> \
-            <tr> \
-              <td class="b"/> \
-              <td class="body"> \
-                <div class="content"> \
-                </div> \
-                <div class="footer"> \
-                  <a href="#" class="close"> \
-                    <img src="/facebox/closelabel.gif" title="close" class="close_image" /> \
-                  </a> \
-                </div> \
-              </td> \
-              <td class="b"/> \
-            </tr> \
-            <tr> \
-              <td class="bl"/><td class="b"/><td class="br"/> \
-            </tr> \
-          </tbody> \
-        </table> \
-      </div> \
-    </div>'
+			faceboxHtml	 : '\
+			<div id="facebox" style="display:none;"> \
+				<div class="popup"> \
+					<div class="body"> \
+						<div class="contents"> \
+						</div> \
+						<div class="footer"> \
+              <a href="#" class="close"> \
+                <img src="/facebox/closelabel.gif" title="close" class="close_image" /> \
+              </a> \
+            </div> \
+					</div> \
+				</div> \
+			</div>'
     },
 
     loading: function() {
@@ -139,7 +125,7 @@
       $('#facebox .content').append(data)
       $('#facebox .loading').remove()
       $('#facebox .body').children().fadeIn('normal')
-      $('#facebox').css('left', $(window).width() / 2 - ($('#facebox table').width() / 2))
+			$('#facebox').css('left', $(window).width() / 2 - ($('#facebox').width() / 2))
       $(document).trigger('reveal.facebox').trigger('afterReveal.facebox')
     },
 
