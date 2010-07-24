@@ -2,8 +2,8 @@
 %html
 	%head
 		%title SoundCloud Social Download
-		= stylesheet_link_tag 'application'
-		= javascript_include_tag :defaults
+		= stylesheet_link_tag 'application', 'facebox'
+		= javascript_include_tag 'jquery', 'facebox', 'application'
 	%body
 	
 		= "<p id='notice' style='color:green;'>#{flash[:notice]}</p>" if flash[:notice]
