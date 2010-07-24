@@ -12,8 +12,11 @@
 }
 
 #facebox .popup { position: relative; }
-#facebox .body { padding: 10px; }
+
+#facebox .body { padding: 20px; }
+
 #facebox .loading, #facebox .image { text-align: center; }
+
 #facebox img { border: 0; margin: 0; }
 
 #facebox .footer {
