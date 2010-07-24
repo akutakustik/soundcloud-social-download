@@ -86,7 +86,7 @@
 			<div id="facebox" style="display:none;"> \
 				<div class="popup"> \
 					<div class="body"> \
-						<div class="contents"> \
+						<div class="content"> \
 						</div> \
 						<div class="footer"> \
               <a href="#" class="close"> \

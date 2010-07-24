@@ -16,5 +16,11 @@
 		= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :title => "Login with Facebook", :class => "button"
 		= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
 
-%div#form{:style => "display:none;"}
-	Insert Post Form Here
+%div#form{:style => "display:none"}
+	- form_for "post", :url => posts_path do |f|
+		%p
+			= f.label :body, "Update"
+			%br
+			= f.text_area :body
+			
+		%p= f.submit "Submit"

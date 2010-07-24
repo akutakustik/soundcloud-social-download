@@ -18,6 +18,10 @@ class PostsController < ApplicationController
 
   def create
     
+    flash[:notice] = params[:post]
+    
+    redirect_to root_path
+    
 =begin
 
 response = Facebook.new(session[:facebook]).class.post('/me/feed', 
