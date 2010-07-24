@@ -25,8 +25,10 @@ class SessionsController < ApplicationController
     if params[:service] == "facebook" # oauth2
       
       access_token = client.web_server.get_access_token(params[:code], :redirect_uri => oauth_callback_url("facebook"))
-
-      session[:facebook] = access_token.token
+      
+      result = Facebook.new(access_token.token).class.get('/me')
+      
+      session[:user] = {:service => "facebook", :token => access_token.token, :name => result["name"], :picture => "https://graph.facebook.com/#{result["id"]}/picture"}
       
     else # oauth
       
@@ -36,11 +38,17 @@ class SessionsController < ApplicationController
     
       session[:request_token], session[:request_token_secret] = nil
 
-      session[params[:service].to_sym] = {:token => access_token.token, :secret => access_token.secret}
+      session[:user] = {:service => params[:service], :token => access_token.token, :secret => access_token.secret}
+      
+      if params[:service] == "twitter"
+        
+        result = Crack::JSON.parse(access_token("twitter").get('/account/verify_credentials.json').body)
+        
+        session[:user][:name], session[:user][:picture] = result['name'], result["profile_image_url"]
+        
+      end
       
     end
-    
-    # flash[:notice] = "you have logged into #{params[:service]}"
     
     redirect_to root_path
     

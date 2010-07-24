@@ -16,20 +16,20 @@
 		= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :title => "Login with Facebook", :class => "button"
 		= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
 		
-	- if @service
+	- if session[:user]
 
 		%div#form{:style => "display:none"}
 
-			= image_tag @user["picture"]
-			= @user["name"]
+			= image_tag session[:user][:picture]
+			= session[:user][:name]
 
 			- form_for "post", :url => posts_path do |f|
 
-				= f.hidden_field :service, :value => @service
+				= f.hidden_field :service, :value => session[:user][:service]
 
 				%h3.fl= f.label :text, "Update"
 				%h3#count.fr
-					= @service == "facebook" ? @count = "420" : @count = "140"
+					= session[:user][:service] == "facebook" ? @count = "420" : @count = "140"
 
 				%p= f.text_area :text, :rows => 4, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});"
 
