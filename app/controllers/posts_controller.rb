@@ -14,6 +14,8 @@ class PostsController < ApplicationController
       
       @user["name"], @user["picture"] = result["name"], "https://graph.facebook.com/#{result["id"]}/picture"
       
+      @service = "facebook"
+      
     elsif logged_in("twitter")
       
       @access_token = OAuth::AccessToken.new(consumer("twitter"), session[:twitter][:token], session[:twitter][:secret])
@@ -21,6 +23,8 @@ class PostsController < ApplicationController
       result = Crack::JSON.parse(@access_token.get('/account/verify_credentials.json').body)
       
       @user["name"], @user["picture"] = result["name"], result["profile_image_url"]
+      
+      @service = "twitter"
       
     end
     

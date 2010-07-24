@@ -6,16 +6,16 @@ jQuery(document).ready(function($) {
 
 function count(maxLength) {
 
-	var lngCount = $("#post_text").val().length;
+	var lngCount = $("#facebox #post_text").val().length;
 	
 	currentLength = maxLength - lngCount;
 	
 	if (lngCount > maxLength) {
-		$("#count").html("<span style='color:red;'>" + currentLength + "</span>");
-		$('#post_submit').attr('disabled', 'disabled');
+		$("#facebox #count").html("<span style='color:red;'>" + currentLength + "</span>");
+		$('#facebox #post_submit').attr('disabled', 'disabled');
 	} else {
-		$("#count").html(currentLength);
-		$('#post_submit').removeAttr('disabled');
+		$("#facebox #count").html(currentLength);
+		$('#facebox #post_submit').removeAttr('disabled');
 	}
 	
 }
