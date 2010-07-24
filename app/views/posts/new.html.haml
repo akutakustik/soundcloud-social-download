@@ -1,33 +1,16 @@
-%div{:style => "text-align:center"}
-
-	%h1 Logo
-
-	%div [ player goes here ]
-	
-	%h2 Download "Scars on Broadway"
-	
-	%p Just click below to tell your Facebook or Twitter friends about Scars on Broadway
-		
-	- if logged_in("facebook")
-		= link_to "Share to Download", "#form", :class => "button glow", :rel => "facebox"
-	- elsif logged_in("twitter")
-		= link_to "Tweet to Download", "#form", :class => "button glow", :rel => "facebox"
-	-else
-		= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :title => "Login with Facebook", :class => "button"
-		= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
-		
 - if logged_in("facebook") || logged_in("twitter")
 
-	%div#form{:style => "display:none"}
+	%div#form
 
 		= image_tag @user["picture"]
 		= @user["name"]
 
 		- form_for "post", :url => posts_path do |f|
 	
-			%h3= f.label :body, "Update"
+			%h3= f.label :text, "Update"
+			%h3#count 400
 
-			%p= f.text_area :body
+			%p= f.text_area :text, :rows => 4, :style => "width:100%", :autocomplete => "off", :tabindex => "1", :onkeyup => "count(400);", :onFocus => "count(400);", :onBlur => "count(400);"
 			
 			%p
 				= f.submit "Submit"
