@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   
   protected
   
+  def logged_in(service)
+    session[service.to_sym] ? true : false
+  end
+  
   def consumer(service)
     @consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'])
   end
