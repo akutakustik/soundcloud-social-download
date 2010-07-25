@@ -29,7 +29,7 @@
 				%h3.fl= f.label :text, "Update Your Status"
 				%h3#count.fr= @count
 
-				%p.clear= f.text_area :text, :rows => 4, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});"
+				%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});"
 				
 				%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
 				%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"

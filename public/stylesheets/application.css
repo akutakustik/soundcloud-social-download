@@ -14,7 +14,8 @@ h3{ margin: 0 0 10px 0; }
 
 textarea{
 	resize: none;
-	width: 358px;
+	height: 80px;
+	width: 458px;
 }
 textarea:focus{ outline: 5px auto #E3E3E3; }
 
@@ -34,9 +35,7 @@ textarea:focus{ outline: 5px auto #E3E3E3; }
 	vertical-align: top;
 }
 
-.button:hover{
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(white));
-}
+.button:hover{ background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(white)); }
 
 .glow{
 	-webkit-animation-name: Pulse;
