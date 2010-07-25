@@ -10,20 +10,16 @@ class PostsController < ApplicationController
     
     if @post["service"] == "facebook"
       
-=begin      
-      
-      response = Facebook.new(session[:facebook]).class.post('/me/feed', 
+      response = Facebook.new(session[:user][:token]).class.post('/me/feed', 
         :query => {
-          :message => "testing social download",
-          #:picture => @product.image("compact"),
+          :message => @post["text"],
+          :picture => "#{root_url}images/artwork.jpg",
           :link => root_url,
-          :name => "social download"
-          #:caption
-          #:description
+          :name => "social download" # title of page
+          #:caption => "social-download.com", # caption of title
+          #:description => "social post for a free download" # description below caption
         }
       )
-      
-=end 
       
     elsif @post["service"] == "twitter"
       
