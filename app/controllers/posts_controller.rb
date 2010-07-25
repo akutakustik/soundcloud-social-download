@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  def new  
+  def new 
     
   end
 
