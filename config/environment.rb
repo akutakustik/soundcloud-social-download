@@ -8,7 +8,7 @@ Rails::Initializer.run do |config|
   config.gem "httparty"
   config.gem "oauth"
   config.gem "oauth2"
-  config.gem "configatron"
+  config.gem 'rails-settings', :lib => 'settings'
 
   config.time_zone = 'UTC'
   

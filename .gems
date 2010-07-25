@@ -3,4 +3,4 @@ haml
 httparty
 oauth
 oauth2
-configatron
+rails-settings
