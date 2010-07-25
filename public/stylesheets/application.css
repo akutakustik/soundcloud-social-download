@@ -14,8 +14,10 @@ h3{ margin: 0 0 10px 0; }
 
 textarea{
 	resize: none;
+	font-size: 14px;
 	height: 80px;
-	width: 458px;
+	padding: 5px 10px;
+	width: 438px;
 }
 textarea:focus{ outline: 5px auto #E3E3E3; }
 

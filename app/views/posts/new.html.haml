@@ -4,9 +4,9 @@
 
 	%div [ player goes here ]
 	
-	%h2 Download "Scars on Broadway"
+	%h2= Settings.config["title"]
 	
-	%p Just click below to tell your Facebook or Twitter friends about Scars on Broadway
+	%p= Settings.config["instructions"]
 		
 	- if logged_in("facebook")
 		= link_to "Share to Download", "#form", :class => "button glow", :rel => "facebox"
@@ -18,7 +18,7 @@
 		
 	- if session[:user]
 	
-		- session[:user][:service] == "facebook" ? @count = "420" : @count = "140"
+		- session[:user][:service] == "facebook" ? @count = 420 : @count = 140
 
 		%div#form{:style => "display:none"}
 
@@ -26,10 +26,10 @@
 
 				= f.hidden_field :service, :value => session[:user][:service]
 
-				%h3.fl= f.label :text, "Update Your Status"
-				%h3#count.fr= @count
+				%h3.fl= f.label :text, Settings.config["header"]
+				%h3#count.fr= @count - Settings.config["default_status"].length
 
-				%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});"
+				%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});", :value => Settings.config["default_status"]
 				
 				%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
 				%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"
