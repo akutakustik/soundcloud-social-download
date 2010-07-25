@@ -1,0 +1,21 @@
+# Promotion title, eg. Social to Download
+title: Download "Scars on Broadway"
+
+# Competition description
+description: Tell your social friends about Scars on Broadway and get a free download.
+
+# track url
+track: http://soundcloud.com/leemartin/test
+
+# These options customize certain aspects of the embedded SoundCloud player.
+# http://wiki.github.com/soundcloud/Widget-JS-API/widget-options
+player_params: "&color=d7650b&text_buy_track=Vote For Remix"
+
+# http://soundcloud.com/premium#premium-accounts
+download_limit:
+
+default_status: Download a free Scars on Broadway song at http://example.com
+
+header: Update Status
+
+instructions: Just click below to tell your Facebook or Twitter friends about Scars on Broadway.

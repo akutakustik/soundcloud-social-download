@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   
   def new 
     
+    puts Settings.config["title"]
+    
   end
 
   def create
