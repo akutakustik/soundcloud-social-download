@@ -4,12 +4,19 @@
 }
 
 body{
-	
+	background: #000 url('/images/bg.jpg') top center no-repeat;
+	color: #CCC;
+	font: 14px Georgia, serif;
 }
 
-p{ margin: 15px 0; }
+p{ margin: 0 0 10px 0; }
 
-h1, h2{ margin: 10px 0; }
+h1, h2{
+	color: #FFF;
+	margin: 10px 0 5px 0;
+	font-weight: normal;
+	text-transform: uppercase;
+}
 h3{ margin: 0 0 10px 0; }
 
 textarea{
@@ -22,9 +29,12 @@ textarea{
 textarea:focus{ outline: 5px auto #E3E3E3; }
 
 .button{
-	background-color: #E3E3E3;
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#E3E3E3));
-	border: 1px solid #CCC;
+	/*background-color: #E3E3E3;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#E3E3E3));*/
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#000));
+	background-color: #000;
+	border: 2px solid #CCC;
+	color: #b70019;
 	-moz-border-radius: 100px; 
 	-webkit-border-radius: 100px;
 	display: inline-block;
@@ -34,10 +44,14 @@ textarea:focus{ outline: 5px auto #E3E3E3; }
 	position: relative;
 	text-decoration: none;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	text-transform: uppercase;
 	vertical-align: top;
 }
 
-.button:hover{ background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(white)); }
+.button:hover{
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(#333));
+	/*background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(white));*/
+}
 
 .glow{
 	-webkit-animation-name: Pulse;

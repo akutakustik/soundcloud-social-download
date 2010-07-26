@@ -1,8 +1,10 @@
 %div{:style => "text-align:center"}
 
-	%h1 Logo
+	-#%h1 Logo
 
-	%div [ player goes here ]
+	%div{:style => "-webkit-box-shadow: 0 0 20px black;width:300px;margin:110px auto 0 auto;"}
+		=# image_tag "artwork.jpg", :width => 300
+		<object height="300" width="300"> <param name="movie" value="http://player.soundcloud.com/player.swf?url=http://soundcloud.com/scars-on-broadway/test&amp;auto_play=false&amp;player_type=artwork&amp;color=000000"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="300" src="http://player.soundcloud.com/player.swf?url=http://soundcloud.com/scars-on-broadway/test&amp;auto_play=false&amp;player_type=artwork&amp;color=000000" type="application/x-shockwave-flash" width="300"></embed> </object>   
 	
 	%h2= Settings.config["title"]
 	
