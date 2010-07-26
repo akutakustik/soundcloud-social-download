@@ -9,7 +9,7 @@ track: http://soundcloud.com/leemartin/test
 
 # These options customize certain aspects of the embedded SoundCloud player.
 # http://wiki.github.com/soundcloud/Widget-JS-API/widget-options
-player_params: "&color=d7650b&text_buy_track=Vote For Remix"
+player_params: "&theme_color=000000&color=d7650b&text_buy_track=Vote For Remix"
 
 # http://soundcloud.com/premium#premium-accounts
 download_limit:
@@ -18,4 +18,4 @@ default_status: Download a free Scars on Broadway song at http://example.com
 
 header: Update Status
 
-instructions: Just click below to tell your Facebook or Twitter friends about Scars on Broadway.
+instructions: Click below to tell your friends about Scars on Broadway.

@@ -1,49 +1,46 @@
-%div{:style => "text-align:center"}
+= image_tag 'logo.png'
 
-	-#%h1 Logo
+%div{:style => "-webkit-box-shadow: 0 0 20px black;width:300px;margin:10px auto 0 auto;"}
+	<object height="300" width="300"> <param name="movie" value="http://player.soundcloud.com/player.swf?url=http://soundcloud.com/scars-on-broadway/test&amp;auto_play=false&amp;player_type=artwork&amp;color=000000"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="300" src="http://player.soundcloud.com/player.swf?url=http://soundcloud.com/scars-on-broadway/test&amp;auto_play=false&amp;player_type=artwork&amp;color=000000" type="application/x-shockwave-flash" width="300"></embed> </object>   
 
-	%div{:style => "-webkit-box-shadow: 0 0 20px black;width:300px;margin:110px auto 0 auto;"}
-		=# image_tag "artwork.jpg", :width => 300
-		<object height="300" width="300"> <param name="movie" value="http://player.soundcloud.com/player.swf?url=http://soundcloud.com/scars-on-broadway/test&amp;auto_play=false&amp;player_type=artwork&amp;color=000000"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="300" src="http://player.soundcloud.com/player.swf?url=http://soundcloud.com/scars-on-broadway/test&amp;auto_play=false&amp;player_type=artwork&amp;color=000000" type="application/x-shockwave-flash" width="300"></embed> </object>   
+%h2= Settings.config["title"]
+
+- if session[:download]
+
+	%p Click below to start your download
 	
-	%h2= Settings.config["title"]
+	= link_to "Download", download_path, :class => "button glow"
 	
-	- if session[:download]
+- else
+
+	%p= Settings.config["instructions"]
 	
-		%p Click below to start your download
-		
-		= link_to "Download", download_path, :class => "button glow"
-		
-	- else
+	- if logged_in("facebook")
+		= link_to "Share to Download", "#form", :class => "button", :rel => "facebox"
+	- elsif logged_in("twitter")
+		= link_to "Tweet to Download", "#form", :class => "button", :rel => "facebox"
+	-else
+		= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :title => "Login with Facebook", :class => "button"
+		= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
 	
-		%p= Settings.config["instructions"]
-		
-		- if logged_in("facebook")
-			= link_to "Share to Download", "#form", :class => "button", :rel => "facebox"
-		- elsif logged_in("twitter")
-			= link_to "Tweet to Download", "#form", :class => "button", :rel => "facebox"
-		-else
-			= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :title => "Login with Facebook", :class => "button"
-			= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
-		
-		- if session[:user]
-	
-			- session[:user][:service] == "facebook" ? @count = 420 : @count = 140
+	- if session[:user]
 
-			%div#form{:style => "display:none"}
+		- session[:user][:service] == "facebook" ? @count = 420 : @count = 140
 
-				- form_for "post", :url => posts_path do |f|
+		%div#form{:style => "display:none"}
 
-					= f.hidden_field :service, :value => session[:user][:service]
+			- form_for "post", :url => posts_path do |f|
 
-					%h3.fl= f.label :text, Settings.config["header"]
-					%h3#count.fr= @count - Settings.config["default_status"].length
+				= f.hidden_field :service, :value => session[:user][:service]
 
-					%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});", :value => Settings.config["default_status"]
-				
-					%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
-					%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"
-					%div.fr
-						= link_to "x", "#", :onclick => "$.facebox.close();"
-						= f.submit "Submit"
-					%div.clear
+				%h3.fl= f.label :text, Settings.config["header"]
+				%h3#count.fr= @count - Settings.config["default_status"].length
+
+				%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});", :value => Settings.config["default_status"]
+			
+				%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
+				%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"
+				%div.fr
+					= link_to "x", "#", :onclick => "$.facebox.close();"
+					= f.submit "Submit"
+				%div.clear

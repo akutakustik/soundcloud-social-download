@@ -3,12 +3,29 @@
 	padding: 0;
 }
 
-body, html { width: 100%; height: 100%; }
+/*body, html { width: 100%; height: 100%; }*/
 
 body{
 	background: #000 url('/images/bg.jpg') top center no-repeat;
 	color: #CCC;
 	font: 14px Georgia, serif;
+	text-align: center;
+	min-width: 800px;
+	min-height: 500px;
+}
+
+#vertial{
+	position: absolute;
+	top: 50%;
+	margin-top: -250px;
+	left: 0;
+	width: 100%;
+}
+
+#hoz{
+	width: 800px;
+	margin: 0 auto;
+	height: 500px;
 }
 
 p{ margin: 0 0 10px 0; }
