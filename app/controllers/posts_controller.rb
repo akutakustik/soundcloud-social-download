@@ -2,8 +2,6 @@ class PostsController < ApplicationController
   
   def new 
     
-    #puts Settings.config["title"]
-    
   end
 
   def create
@@ -25,13 +23,23 @@ class PostsController < ApplicationController
       
     elsif @post["service"] == "twitter"
       
-      access_token("twitter").post('/statuses/update.json', {:status => @post["text"]})
+      oauth("twitter", session[:user][:token], session[:user][:secret]).post('/statuses/update.json', {:status => @post["text"]})
       
     end
     
-    flash[:notice] = "thanks for posting to #{@post["service"]}"
+    session[:download] = true
     
     redirect_to root_path
+    
+  end
+  
+  def download
+    
+    if session[:download]
+      redirect_to oauth("soundcloud", Settings.token, Settings.secret).get("#{Settings.config["track"]}/download")["location"]
+    else
+      redirect_to root_path
+    end
     
   end
 

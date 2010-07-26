@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
     @client ||= OAuth2::Client.new(config['facebook']['app_id'], config['facebook']['secret'], :site => config['facebook']['base_url'])
   end
   
-  def access_token(service)
-    @access_token ||= OAuth::AccessToken.new(consumer(service), session[:user][:token], session[:user][:secret])
+  def oauth(service, token, secret)
+    @oauth ||= OAuth::AccessToken.new(consumer(service), token, secret)
   end
   
   def config

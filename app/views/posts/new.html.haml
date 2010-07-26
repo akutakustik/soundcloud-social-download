@@ -6,34 +6,42 @@
 	
 	%h2= Settings.config["title"]
 	
-	%p= Settings.config["instructions"]
-		
-	- if logged_in("facebook")
-		= link_to "Share to Download", "#form", :class => "button glow", :rel => "facebox"
-	- elsif logged_in("twitter")
-		= link_to "Tweet to Download", "#form", :class => "button glow", :rel => "facebox"
-	-else
-		= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :title => "Login with Facebook", :class => "button"
-		= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
-		
-	- if session[:user]
+	- if session[:download]
 	
-		- session[:user][:service] == "facebook" ? @count = 420 : @count = 140
+		%p Click below to start your download
+		
+		= link_to "Download", download_path, :class => "button glow"
+		
+	- else
+	
+		%p= Settings.config["instructions"]
+		
+		- if logged_in("facebook")
+			= link_to "Share to Download", "#form", :class => "button", :rel => "facebox"
+		- elsif logged_in("twitter")
+			= link_to "Tweet to Download", "#form", :class => "button", :rel => "facebox"
+		-else
+			= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :title => "Login with Facebook", :class => "button"
+			= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
+		
+		- if session[:user]
+	
+			- session[:user][:service] == "facebook" ? @count = 420 : @count = 140
 
-		%div#form{:style => "display:none"}
+			%div#form{:style => "display:none"}
 
-			- form_for "post", :url => posts_path do |f|
+				- form_for "post", :url => posts_path do |f|
 
-				= f.hidden_field :service, :value => session[:user][:service]
+					= f.hidden_field :service, :value => session[:user][:service]
 
-				%h3.fl= f.label :text, Settings.config["header"]
-				%h3#count.fr= @count - Settings.config["default_status"].length
+					%h3.fl= f.label :text, Settings.config["header"]
+					%h3#count.fr= @count - Settings.config["default_status"].length
 
-				%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});", :value => Settings.config["default_status"]
+					%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});", :value => Settings.config["default_status"]
 				
-				%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
-				%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"
-				%div.fr
-					= link_to "x", "#", :onclick => "$.facebox.close();"
-					= f.submit "Submit"
-				%div.clear
+					%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
+					%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"
+					%div.fr
+						= link_to "x", "#", :onclick => "$.facebox.close();"
+						= f.submit "Submit"
+					%div.clear

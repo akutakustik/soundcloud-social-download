@@ -37,14 +37,40 @@ class SessionsController < ApplicationController
       access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
     
       session[:request_token], session[:request_token_secret] = nil
-
-      session[:user] = {:service => params[:service], :token => access_token.token, :secret => access_token.secret}
       
       if params[:service] == "twitter"
         
-        result = Crack::JSON.parse(access_token("twitter").get('/account/verify_credentials.json').body)
+        result = Crack::JSON.parse(access_token.get('/account/verify_credentials.json').body)
         
-        session[:user][:name], session[:user][:picture] = result['name'], result["profile_image_url"]
+        session[:user] = {:service => "twitter", :token => access_token.token, :secret => access_token.secret, :name => result["name"], :picture => result["profile_image_url"]}
+        
+      elsif params[:service] == "soundcloud"
+        
+        #track_url = access_token.get("/resolve?url=#{Settings.config["track"]}")["location"]
+        
+        #if track_url
+        
+          #track_user_id = Crack::JSON.parse(access_token.get("#{track_url}.json").body)["user"]["id"]
+        
+          #user_id = Crack::JSON.parse(access_token.get('/me.json').body)["id"]
+        
+          #if user_id == track_user_id
+          
+            flash[:notice] = "You have successfully connected with SoundCloud"
+          
+            Settings.token, Settings.secret = access_token.token, access_token.secret
+          
+          #else
+          
+            #flash[:notice] = "Error"
+          
+          #end
+          
+        #else
+          
+          #flash[:notice] = "Error"
+          
+        #end
         
       end
       
