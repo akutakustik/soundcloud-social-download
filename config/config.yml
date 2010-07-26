@@ -1,5 +1,5 @@
 # Promotion title, eg. Social to Download
-title: Download "Fucking"
+title: Free <strong>Fucking</strong> Download
 
 # Competition description
 description: Tell your social friends about Scars on Broadway and get a free download.
@@ -9,13 +9,17 @@ track: http://soundcloud.com/leemartin/test
 
 # These options customize certain aspects of the embedded SoundCloud player.
 # http://wiki.github.com/soundcloud/Widget-JS-API/widget-options
-player_params: "&theme_color=000000&color=d7650b&text_buy_track=Vote For Remix"
+player_params: "&color=000000&player_type=artwork&text_buy_track=Free Fucking Download"
 
 # http://soundcloud.com/premium#premium-accounts
 download_limit:
 
-default_status: Download a free Scars on Broadway song at http://example.com
-
-header: Update Status
-
 instructions: Click below to tell your friends about Scars on Broadway.
+
+facebook:
+  header: Share
+  status: "is listening to Scars on Broadway F*cking. Get yours http://bit.ly/abc"
+
+twitter:
+  header: Update Status
+  status: "Scars on Broadway: Free F*cking Download http://bit.ly/123"
