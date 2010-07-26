@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     
     if session[:download]
       logger.info "#{Settings.token} #{Settings.secret} #{Settings.config["track"]}"
-      location oauth("soundcloud", Settings.token, Settings.secret).get("#{Settings.config["track"]}/download") #["location"]
+      location = oauth("soundcloud", Settings.token, Settings.secret).get("#{Settings.config["track"]}/download") #["location"]
       logger.info location
     else
       redirect_to root_path
