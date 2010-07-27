@@ -11,13 +11,13 @@ body{
 	font: 14px Georgia, serif;
 	text-align: center;
 	min-width: 800px;
-	min-height: 500px;
+	min-height: 550px;
 }
 
 #vertial{
 	position: absolute;
 	top: 50%;
-	margin-top: -250px;
+	margin-top: -275px;
 	left: 0;
 	width: 100%;
 }
