@@ -1,6 +1,6 @@
 = image_tag 'logo.png'
 
-%div#player= "<object height='400' width='400'><param name='bgcolor' value='000000'></param><param name='movie' value='http://player.soundcloud.com/player.swf?url=#{Settings.config["track"]}#{Settings.config["player_params"]}'></param><param name='allowscriptaccess' value='always'></param><embed allowscriptaccess='always' height='400' src='http://player.soundcloud.com/player.swf?url=#{Settings.config["track"]}#{Settings.config["player_params"]}' type='application/x-shockwave-flash' width='400' bgcolor='000000'></embed></object>"
+%div#player= "<object height='400' width='400'><param name='bgcolor' value='000000'></param><param name='movie' value='http://player.soundcloud.com/player.swf?url=#{Settings.config["track"]}#{Settings.config["params"]}'></param><param name='allowscriptaccess' value='always'></param><embed allowscriptaccess='always' height='400' src='http://player.soundcloud.com/player.swf?url=#{Settings.config["track"]}#{Settings.config["params"]}' type='application/x-shockwave-flash' width='400' bgcolor='000000'></embed></object>"
 
 %h2= Settings.config["title"]
 

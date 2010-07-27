@@ -1,15 +1,15 @@
 # Promotion title, eg. Social to Download
-title: Free <strong>Fucking</strong> Download
+title: Free Fucking Download
 
 # Competition description
-description: Tell your social friends about Scars on Broadway and get a free download.
+description: "Share the track with your friends, plus get a free mp3 download."
 
 # track url
 track: http://soundcloud.com/scars-on-broadway/test
 
 # These options customize certain aspects of the embedded SoundCloud player.
 # http://wiki.github.com/soundcloud/Widget-JS-API/widget-options
-player_params: "&color=000000&player_type=artwork&text_buy_track=Free Fucking Download"
+params: "&color=000000&player_type=artwork&text_buy_track=Free Fucking Download"
 
 # http://soundcloud.com/premium#premium-accounts
 download_limit:

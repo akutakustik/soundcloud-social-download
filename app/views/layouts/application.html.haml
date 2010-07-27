@@ -1,9 +1,20 @@
 !!! XHTML 1.0 Transitional
 %html
 	%head
-		%title= Settings.config["title"].gsub(/<\/?[^>]*>/, "")
+		%title= Settings.config["title"]
+		
+		<meta name="title" content="#{Settings.config["title"]}" />
+		<meta name="description" content="#{Settings.config["description"]}" /> 
+
+		<meta name="medium" content="video" />
+		<meta name="video_type" content="application/x-shockwave-flash" />
+
+		<link rel="video_src" href="http://player.soundcloud.com/player.swf?url=#{Settings.config["track"]}#{Settings.config["params"]}" />
+		<link rel="image_src" href="#{root_url}/images/artwork.jpg" />
+		
 		= stylesheet_link_tag 'application', 'facebox'
 		= javascript_include_tag 'jquery', 'facebox', 'application'
+		
 	%body
 	
 		= "<p id='notice' style='color:green;'>#{flash[:notice]}</p>" if flash[:notice]
