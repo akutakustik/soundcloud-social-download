@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
   
   def config
-    config = YAML.load(File.open(RAILS_ROOT + '/config/auth.yml').read) #[RAILS_ENV]
+    config = YAML.load(File.open(RAILS_ROOT + '/config/auth.yml').read)[RAILS_ENV]
   end
   
 end
