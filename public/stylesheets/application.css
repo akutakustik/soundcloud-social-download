@@ -6,7 +6,7 @@ body{
 	background: #000 url('/images/bg.jpg') top center no-repeat;
 	color: #CCC;
 	font: 14px Georgia, serif;
-	min-height: 600px;
+	min-height: 670px;
 	text-align: center;
 }
 
@@ -23,13 +23,13 @@ h3{ margin: 0 0 10px 0; }
 
 #vertical{
 	left: 0;
-	margin-top: -300px;
+	margin-top: -335px;
 	position: absolute;
 	top: 50%;
 	width: 100%;
 }
 
-#hoz{ height: 600px; }
+#hoz{ height: 670px; }
 
 #player{
 	-webkit-box-shadow: 0 0 20px black;
