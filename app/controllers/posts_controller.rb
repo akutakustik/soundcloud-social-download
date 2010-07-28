@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     # add fail safe?
     
     if session[:download]
-      location = oauth("soundcloud", Settings.token, Settings.secret).get("#{Settings.config["track"]}/download")["location"]
+      location = oauth("soundcloud", Settings.token, Settings.secret).get("#{SETTINGS["track"]}/download")["location"]
       redirect_to location
     else
       redirect_to root_path

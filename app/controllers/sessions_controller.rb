@@ -46,7 +46,7 @@ class SessionsController < ApplicationController
         
       elsif params[:service] == "soundcloud"
         
-        track_url = access_token.get("/resolve?url=#{Settings.config["track"]}")["location"]
+        track_url = access_token.get("/resolve?url=#{SETTINGS["track"]}")["location"]
         
         if track_url
         

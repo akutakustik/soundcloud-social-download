@@ -1,10 +1,10 @@
 = image_tag 'logo.png'
 
--#%div#player= "<object height='400' width='400'><param name='bgcolor' value='000000'></param><param name='movie' value='http://player.soundcloud.com/player.swf?url=#{Settings.config["track"]}#{Settings.config["params"]}'></param><param name='allowscriptaccess' value='always'></param><embed allowscriptaccess='always' height='400' src='http://player.soundcloud.com/player.swf?url=#{Settings.config["track"]}#{Settings.config["params"]}' type='application/x-shockwave-flash' width='400' bgcolor='000000'></embed></object>"
+-#%div#player= "<object height='#{SETTINGS["player"]["height"]}' width='#{SETTINGS["player"]["width"]}'><param name='bgcolor' value='000000'></param><param name='movie' value='http://player.soundcloud.com/player.swf?url=#{SETTINGS["track"]}#{SETTINGS["player"]["params"]}'></param><param name='allowscriptaccess' value='always'></param><embed allowscriptaccess='always' height='#{SETTINGS["player"]["height"]}' src='http://player.soundcloud.com/player.swf?url=#{SETTINGS["track"]}#{SETTINGS["player"]["params"]}' type='application/x-shockwave-flash' width='#{SETTINGS["player"]["width"]}' bgcolor='000000'></embed></object>"
 
 %div#player= image_tag 'artwork.jpg', :height => 400, :width => 400
 
-%h2= Settings.config["title"]
+%h2= SETTINGS["title"]
 
 - if session[:download]
 
@@ -14,7 +14,7 @@
 	
 - else
 
-	%p= Settings.config["instructions"]
+	%p= SETTINGS["instructions"]
 	
 	- if logged_in("facebook")
 	
@@ -40,8 +40,8 @@
 
 				= f.hidden_field :service, :value => @service
 
-				%h3.fl= f.label :text, Settings.config[@service]["header"]
-				%h3#count.fr= @count - Settings.config[@service]["status"].length
+				%h3.fl= f.label :text, SETTINGS[@service]["header"]
+				%h3#count.fr= @count - SETTINGS[@service]["status"].length
 
 				%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});", :value => Settings.config[@service]["status"]
 			
