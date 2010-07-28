@@ -7,7 +7,7 @@
 
 		= f.hidden_field :service, :value => @service
 
-		%h2.fl= f.label :text, SETTINGS[@service]["header"]
+		%h2.fl= SETTINGS[@service]["header"]
 		%h2#count.fr= @count - SETTINGS[@service]["status"].length
 
 		%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});", :value => Settings.config[@service]["status"]
