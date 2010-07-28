@@ -41,6 +41,8 @@ class PostsController < ApplicationController
   def download
     
     if session[:download]
+      #puts oauth("soundcloud", Settings.token, Settings.secret).get("/resolve?url=http://soundcloud.com/scars-on-broadway/fucking")
+      #puts oauth("soundcloud", Settings.token, Settings.secret).get("http://soundcloud.com/track/4254552").inspect
       location = oauth("soundcloud", Settings.token, Settings.secret).get("#{SETTINGS["track"]}/download")["location"]
       redirect_to location
     else
