@@ -4,8 +4,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
-  #config.gem "oauth-active-resource"
-  #config.gem "soundcloud-ruby-api-wrapper"
   config.gem "haml"
   config.gem "httparty"
   config.gem "oauth"
