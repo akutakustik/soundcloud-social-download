@@ -1,15 +1,17 @@
 class PromoteController < ApplicationController
 
+  layout false
+
   def widgets
     
   end
 
   def tab
-    render :layout => false
+
   end
 
   def email
-    render :layout => false
+
   end
 
 end
