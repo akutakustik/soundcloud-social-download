@@ -1,16 +1,16 @@
-- @service = session[:user][:service]
-- @service == "facebook" ? @count = 420 : @count = 140
+- service = session[:user][:service]
+- service == "facebook" ? count = 420 : count = 140
 
 %div#form{:style => "display:none"}
 
 	- form_for "post", :url => posts_path do |f|
 
-		= f.hidden_field :service, :value => @service
+		= f.hidden_field :service, :value => service
 
-		%h2.fl= SETTINGS[@service]["header"]
-		%h2#count.fr= @count - SETTINGS[@service]["status"].length
+		%h2.fl= SETTINGS[service]["header"]
+		%h2#count.fr= count - SETTINGS[service]["status"].length
 
-		%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{@count});", :onFocus => "count(#{@count});", :onBlur => "count(#{@count});", :value => Settings.config[@service]["status"]
+		%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{count});", :onFocus => "count(#{count});", :onBlur => "count(#{count});", :value => SETTINGS[service]["status"]
 	
 		%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
 		%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"
