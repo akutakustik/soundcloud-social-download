@@ -11,14 +11,13 @@ body{
 
 p{ margin: 10px 0; }
 
+h1{ color: #FFF; }
+
 h1, h2{
-	color: #FFF;
 	margin: 10px 0;
 	font-weight: normal;
 	text-transform: uppercase;
 }
-
-h3{ margin: 0 0 10px 0; }
 
 object{ 
 	-webkit-box-shadow: 0 0 20px black;
