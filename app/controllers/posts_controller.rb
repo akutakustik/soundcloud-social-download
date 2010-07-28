@@ -15,8 +15,8 @@ class PostsController < ApplicationController
       response = Facebook.new(session[:user][:token]).class.post('/me/feed', 
         :query => {
           :message => @post["text"],
+          :link => root_url
           #:picture => "#{root_url}images/artwork.jpg",
-          :link => root_url,
           #:name => "social download" # title of page
           #:caption => "social-download.com", # caption of title
           #:description => "social post for a free download" # description below caption
