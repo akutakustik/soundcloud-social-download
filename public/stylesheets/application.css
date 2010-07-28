@@ -25,15 +25,7 @@ object{
 	margin: 20px 0 10px 0;
 }
 
-textarea{
-	font-size: 14px;
-	height: 80px;
-	resize: none;
-	padding: 5px 10px;
-	width: 438px;
-}
-
-textarea:focus{ outline: 5px auto #E3E3E3; }
+/* BUTTON & GLOW */
 
 .button{
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#000));
@@ -69,11 +61,17 @@ textarea:focus{ outline: 5px auto #E3E3E3; }
 	to { -webkit-box-shadow: 0 0 15px white; }
 }
 
-.fl{ float: left; }
-.fr{ float: right; }
-.clear{ clear: both; }
-
 /* POPUP */
+
+textarea{
+	font-size: 14px;
+	height: 80px;
+	resize: none;
+	padding: 5px 10px;
+	width: 438px;
+}
+
+textarea:focus{ outline: 5px auto #E3E3E3; }
 
 #facebox {
 	background: #fff;
@@ -106,3 +104,9 @@ textarea:focus{ outline: 5px auto #E3E3E3; }
   position: absolute;
   height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
 }
+
+/* MISC */
+
+.fl{ float: left; }
+.fr{ float: right; }
+.clear{ clear: both; }
