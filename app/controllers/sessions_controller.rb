@@ -26,7 +26,9 @@ class SessionsController < ApplicationController
       
       access_token = client.web_server.get_access_token(params[:code], :redirect_uri => oauth_callback_url("facebook"))
       
-      result = Facebook.new(access_token.token).class.get('/me')
+      #result = Facebook.new(access_token.token).class.get('/me')
+      
+      result = access_token.get('/me') # does this work?
       
       session[:user] = {:service => "facebook", :token => access_token.token, :name => result["name"], :picture => "https://graph.facebook.com/#{result["id"]}/picture"}
       
