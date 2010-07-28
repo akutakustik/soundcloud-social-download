@@ -1,8 +1,6 @@
-= image_tag 'logo.png'
+= image_tag 'logo.png', :alt => SETTINGS["title"]
 
-%div#player{:style => "width:#{SETTINGS["player"]["width"]}px"}= render :partial => "player"
-
--# %div#player{:style => "width:#{SETTINGS["player"]["width"]}px"}= image_tag 'artwork.jpg', :height => 400, :width => 400
+%div#player= render "player"
 
 %h2= SETTINGS["title"]
 
@@ -29,4 +27,4 @@
 		= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :title => "Login with Facebook", :class => "button"
 		= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :title => "Login with Twitter", :class => "button"
 	
-	= render :partial => "facebox" if session[:user]
+	= render "facebox" if session[:user]

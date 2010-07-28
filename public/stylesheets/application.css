@@ -31,10 +31,9 @@ h3{ margin: 0 0 10px 0; }
 
 #hoz{ height: 670px; }
 
-#player{
-	-webkit-box-shadow: 0 0 20px black;
-	margin: 20px auto 0 auto;
-}
+#player{ margin-top: 20px; }
+
+#player object{ -webkit-box-shadow: 0 0 20px black; }
 
 textarea{
 	font-size: 14px;
