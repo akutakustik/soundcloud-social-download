@@ -55,16 +55,6 @@ object{ -webkit-box-shadow: 0 0 20px black; }
 
 /* POPUP */
 
-textarea{
-	font-size: 14px;
-	height: 80px;
-	resize: none;
-	padding: 5px 10px;
-	width: 438px;
-}
-
-textarea:focus{ outline: 5px auto #E3E3E3; }
-
 #facebox {
 	background: #fff;
 	-webkit-box-shadow: #333 0 0 30px 0px;
@@ -79,6 +69,16 @@ textarea:focus{ outline: 5px auto #E3E3E3; }
 #facebox .popup { position: relative; }
 
 #facebox .body { padding: 20px; }
+
+textarea{
+	font-size: 14px;
+	height: 80px;
+	resize: none;
+	padding: 5px 10px;
+	width: 438px;
+}
+
+textarea:focus{ outline: 5px auto #E3E3E3; }
 
 #facebox_overlay {
   position: fixed;
