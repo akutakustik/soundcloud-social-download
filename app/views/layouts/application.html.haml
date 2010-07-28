@@ -3,14 +3,14 @@
 	%head
 		%title= SETTINGS["title"]
 		
-		<meta name="title" content="#{SETTINGS["title"]}" />
-		<meta name="description" content="#{SETTINGS["description"]}" /> 
-		<meta name="medium" content="video" />
-		<meta name="video_height" content="#{SETTINGS["player"]["height"]}" />
-		<meta name="video_width" content="#{SETTINGS["player"]["width"]}" />
-		<meta name="video_type" content="application/x-shockwave-flash" />
-		<link rel="video_src" href="http://player.soundcloud.com/player.swf?url=#{SETTINGS["track"]}#{SETTINGS["player"]["params"]}" />
-		<link rel="image_src" href="#{root_url}images/artwork.jpg" />
+		%meta{:name => "title", :content => SETTINGS["title"]}
+		%meta{:name => "description", :content => SETTINGS["description"]}
+		%meta{:name => "medium", :content => "video"}
+		%meta{:name => "video_height", :content => SETTINS["player"]["height"]}
+		%meta{:name => "video_width", :content => SETTINS["player"]["width"]}
+		%meta{:name => "video_type", :content => "application/x-shockwave-flash"}
+		%link{:rel => "video_src", :href => "http://player.soundcloud.com/player.swf?url=#{SETTINGS["track"]}#{SETTINGS["player"]["params"]}"}
+		%link{:rel => "image_src", :href => "#{root_url}images/artwork.jpg"}
 		
 		= stylesheet_link_tag 'application'
 		= javascript_include_tag 'jquery', 'facebox', 'application'
