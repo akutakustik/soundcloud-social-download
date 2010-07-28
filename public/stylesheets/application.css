@@ -22,8 +22,7 @@ object{ -webkit-box-shadow: 0 0 20px black; }
 /* BUTTON & GLOW */
 
 .button{
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#000));
-	background-color: #000;
+	background: #000 -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#000));
 	border: 2px solid #CCC;
 	-moz-border-radius: 100px; -webkit-border-radius: 100px;
 	color: #b70019;
