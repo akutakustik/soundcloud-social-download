@@ -5,9 +5,11 @@ class PromoteController < ApplicationController
   end
 
   def tab
+    render :layout => false
   end
 
   def email
+    
   end
 
 end
