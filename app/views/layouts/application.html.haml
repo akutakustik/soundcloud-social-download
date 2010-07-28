@@ -17,6 +17,7 @@
 		
 	%body
 	
-		= "<p id='notice' style='color:green;'>#{flash[:notice]}</p>" if flash[:notice]
+		%p#notice= flash[:notice] if flash[:notice]
+		%p#error= flash[:error] if flash[:error]
 		
 		= yield
