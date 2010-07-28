@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     
     #downloaded_file = open sc_client.Track.find(4254552).download_url
     
-    puts user.tracks.inspect
+    logger.info user.tracks.inspect
     
     #4254552
     
