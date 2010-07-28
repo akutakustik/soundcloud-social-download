@@ -9,7 +9,7 @@ class PromoteController < ApplicationController
   end
 
   def email
-    
+    render :layout => false
   end
 
 end
