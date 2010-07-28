@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     
     if @post["service"] == "facebook"
       
-      response = Facebook.new(session[:user][:token]).class.post('/me/feed', :query => {:message => @post["text"], :link => root_url})
+      Facebook.new(session[:user][:token]).class.post('/me/feed', :query => {:message => @post["text"], :link => root_url})
       
     elsif @post["service"] == "twitter"
       
