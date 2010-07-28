@@ -9,6 +9,8 @@ Rails::Initializer.run do |config|
   config.gem "oauth"
   config.gem "oauth2"
   config.gem 'rails-settings', :lib => 'settings'
+  config.gem "oauth-active-resource"
+  config.gem "soundcloud-ruby-api-wrapper"
 
   config.time_zone = 'UTC'
   
