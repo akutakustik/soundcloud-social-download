@@ -1,8 +1,15 @@
 = image_tag 'logo.png'
 
--#%div#player= "<object height='#{SETTINGS["player"]["height"]}' width='#{SETTINGS["player"]["width"]}'><param name='bgcolor' value='000000'></param><param name='movie' value='http://player.soundcloud.com/player.swf?url=#{SETTINGS["track"]}#{SETTINGS["player"]["params"]}'></param><param name='allowscriptaccess' value='always'></param><embed allowscriptaccess='always' height='#{SETTINGS["player"]["height"]}' src='http://player.soundcloud.com/player.swf?url=#{SETTINGS["track"]}#{SETTINGS["player"]["params"]}' type='application/x-shockwave-flash' width='#{SETTINGS["player"]["width"]}' bgcolor='000000'></embed></object>"
+%div#player{:style => "width:#{SETTINGS["player"]["width"]}px"}
 
-%div#player= image_tag 'artwork.jpg', :height => 400, :width => 400
+	= "<object height='#{SETTINGS["player"]["height"]}' width='#{SETTINGS["player"]["width"]}'>"
+	<param name='bgcolor' value='000000'></param>
+	=	"<param name='movie' value='http://player.soundcloud.com/player.swf?url=#{SETTINGS["track"]}#{SETTINGS["player"]["params"]}'>"
+	</param><param name='allowscriptaccess' value='always'></param>
+	= "<embed allowscriptaccess='always' height='#{SETTINGS["player"]["height"]}' src='http://player.soundcloud.com/player.swf?url=#{SETTINGS["track"]}#{SETTINGS["player"]["params"]}' type='application/x-shockwave-flash' width='#{SETTINGS["player"]["width"]}' bgcolor='000000'></embed>"
+	</object>
+
+-# %div#player{:style => "width:#{SETTINGS["player"]["width"]}px"}= image_tag 'artwork.jpg', :height => 400, :width => 400
 
 %h2= SETTINGS["title"]
 

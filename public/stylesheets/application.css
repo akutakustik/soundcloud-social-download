@@ -10,7 +10,6 @@ body{
 	color: #CCC;
 	font: 14px Georgia, serif;
 	text-align: center;
-	min-width: 700px;
 	min-height: 600px;
 }
 
@@ -23,7 +22,6 @@ body{
 }
 
 #hoz{
-	width: 700px;
 	margin: 0 auto;
 	height: 500px;
 }
@@ -31,7 +29,6 @@ body{
 #player{
 	-webkit-box-shadow: 0 0 20px black;
 	margin: 20px auto 0 auto;
-	width: 400px;
 }
 
 p{ margin: 0 0 10px 0; }
