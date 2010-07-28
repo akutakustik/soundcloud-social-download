@@ -2,15 +2,15 @@ class PostsController < ApplicationController
   
   def new
     
-    sc_consumer = Soundcloud.consumer('J8aFr3h5xyOSkYxsJMYXQ','cCysasMDFSo8ErnCaAJQzpl8LUrkoziAVSTvzOhJWc')
-    access_token = OAuth::AccessToken.new(sc_consumer, Settings.token, Settings.secret)
-    sc_client = Soundcloud.register({:access_token => access_token})
+    #sc_consumer = Soundcloud.consumer('J8aFr3h5xyOSkYxsJMYXQ','cCysasMDFSo8ErnCaAJQzpl8LUrkoziAVSTvzOhJWc')
+    #access_token = OAuth::AccessToken.new(sc_consumer, Settings.token, Settings.secret)
+    #sc_client = Soundcloud.register({:access_token => access_token})
     
-    user = sc_client.User.find_me
+    #user = sc_client.User.find_me
     
     #downloaded_file = open sc_client.Track.find(4254552).download_url
     
-    logger.info user.tracks.inspect
+    #logger.info user.tracks.inspect
     
     #4254552
     
