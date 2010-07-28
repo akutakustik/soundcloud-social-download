@@ -46,31 +46,31 @@ class SessionsController < ApplicationController
         
       elsif params[:service] == "soundcloud"
         
-        #track_url = access_token.get("/resolve?url=#{Settings.config["track"]}")["location"]
+        track_url = access_token.get("/resolve?url=#{Settings.config["track"]}")["location"]
         
-        #if track_url
+        if track_url
         
-          #track_user_id = Crack::JSON.parse(access_token.get("#{track_url}.json").body)["user"]["id"]
+          track_user_id = Crack::JSON.parse(access_token.get("#{track_url}.json").body)["user"]["id"]
         
-          #user_id = Crack::JSON.parse(access_token.get('/me.json').body)["id"]
+          user_id = Crack::JSON.parse(access_token.get('/me.json').body)["id"]
         
-          #if user_id == track_user_id
+          if user_id == track_user_id
           
             flash[:notice] = "You have successfully connected with SoundCloud"
           
             Settings.token, Settings.secret = access_token.token, access_token.secret
           
-          #else
+          else
           
-            #flash[:notice] = "Error"
+            flash[:error] = "You are not the owner of the track specified in config.yml."
           
-          #end
+          end
           
-        #else
+        else
           
-          #flash[:notice] = "Error"
+          flash[:error] = "You do not have access to the track specified in config.yml."
           
-        #end
+        end
         
       end
       
