@@ -16,11 +16,11 @@
 	
 	- if logged_in("facebook")
 	
-		= link_to "Share to Download", "#form", :class => "button glow", :rel => "facebox"
+		= link_to SETTINGS["facebook"]["button"], "#form", :class => "button glow", :rel => "facebox"
 		
 	- elsif logged_in("twitter")
 	
-		= link_to "Tweet to Download", "#form", :class => "button glow", :rel => "facebox"
+		= link_to SETTINGS["twitter"]["button"], "#form", :class => "button glow", :rel => "facebox"
 		
 	-else
 	
