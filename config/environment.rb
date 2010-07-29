@@ -13,7 +13,3 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
   
 end
-
-require 'rubygems'
-gem 'soundcloud-ruby-api-wrapper'
-require 'soundcloud'
