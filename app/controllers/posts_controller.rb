@@ -12,10 +12,11 @@ class PostsController < ApplicationController
       
       Facebook.new(session[:user][:token]).class.post('/me/feed', :query => {
         :message => @post["text"], 
+        :picture => "#{root_url}images/artwork.jpg",
         :link => root_url,
-        :picture => "http://armageddoncomealive.com/images/artwork.jpg",
+        :source => "http://player.soundcloud.com/player.swf?url="+SETTINGS["track"]+SETTINGS["player"]["params"]+"&player_type="+SETTINGS["player"]["type"],
         :name => SETTINGS["title"],
-        :caption => "armageddoncomealive.com",
+        :caption => root_url,
         :description => SETTINGS["description"]
         }
       )
