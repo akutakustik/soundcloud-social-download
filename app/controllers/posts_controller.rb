@@ -15,7 +15,7 @@ class PostsController < ApplicationController
         :link => root_url,
         :picture => "http://armageddoncomealive.com/images/artwork.jpg",
         :name => SETTINGS["title"],
-        :caption => root_url,
+        :caption => "armageddoncomealive.com",
         :description => SETTINGS["description"]
         }
       )
