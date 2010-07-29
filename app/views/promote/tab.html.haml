@@ -1,9 +1,5 @@
-%h1 tab app goes here
-
-%p run fbml on page for preview?
-
 %div{:style => "background:black url('#{root_url}images/bg.jpg');padding:20px 0 20px 0;text-align:center"}
 
 	%div{:style => "margin:0 auto;width:425px"}
-
-		<fb:swf swfsrc='http://player.soundcloud.com/player.swf?url=http://soundcloud.com/bandofhorses/sets/infinite-arms&auto_play=true&player_type=artwork&color=000000' imgsrc='http://github.com/soundcloud/soundcloud-fbml/raw/master/examples/custom_play.jpg' height='425' width='425' quality='best' /> 
+	
+		%fb:swf{:swfsrc => "http://player.soundcloud.com/player.swf?url="+SETTINGS["track"]+SETTINGS["player"]["params"]+"&player_type="+SETTINGS["player"]["type"]+"&auto_play=true", :imgsrc => "#{root_url}images/artwork.jpg", :height => 425, :width => 425, :quality => "best"}/
