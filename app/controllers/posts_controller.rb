@@ -14,7 +14,7 @@ class PostsController < ApplicationController
         :message => @post["text"], 
         :picture => "#{root_url}images/artwork.jpg",
         :link => root_url,
-        :source => "http://p1.soundcloud.com/player.swf?url="+SETTINGS["track"]+SETTINGS["player"]["params"]+"&player_type="+SETTINGS["player"]["type"]+"&default_width=259&default_height=259&autoplay=true",
+        :source => "http://p1.soundcloud.com/player.swf?url="+SETTINGS["track"]+SETTINGS["player"]["params"]+"&player_type="+SETTINGS["player"]["type"]+"&default_width=259&default_height=259&auto_play=true",
         :name => SETTINGS["title"],
         :caption => root_url,
         :description => SETTINGS["description"]
