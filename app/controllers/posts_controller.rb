@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def new
-
+    
   end
 
   def create
@@ -10,16 +10,18 @@ class PostsController < ApplicationController
     
     if @post["service"] == "facebook"
       
-      Facebook.new(session[:user][:token]).class.post('/me/feed', :query => {
+      response = Facebook.new(session[:user][:token]).class.post('/me/feed', :query => {
         :message => @post["text"], 
         :picture => "#{root_url}images/artwork.jpg",
         :link => root_url,
-        :source => "http://player.soundcloud.com/player.swf?url="+SETTINGS["track"]+SETTINGS["player"]["params"]+"&player_type="+SETTINGS["player"]["type"],
+        :source => "http://p1.soundcloud.com/player.swf?url="+SETTINGS["track"]+SETTINGS["player"]["params"]+"&player_type="+SETTINGS["player"]["type"]+"&default_width=259&default_height=259&autoplay=true",
         :name => SETTINGS["title"],
         :caption => root_url,
         :description => SETTINGS["description"]
         }
       )
+      
+      puts response.inspect
       
     elsif @post["service"] == "twitter"
       
