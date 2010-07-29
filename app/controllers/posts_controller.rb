@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       Facebook.new(session[:user][:token]).class.post('/me/feed', :query => {
         :message => @post["text"], 
         :link => root_url,
-        :picture => "#{root_url}images/artwork.jpg",
+        :picture => "http://armageddoncomealive.com/images/artwork.jpg",
         :name => SETTINGS["title"],
         :caption => root_url,
         :description => SETTINGS["description"]
