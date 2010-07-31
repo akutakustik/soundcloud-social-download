@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     
     if @post["service"] == "facebook"
       
-      response = Facebook.new(session[:user][:token]).class.post('/me/feed', :query => {
+      Facebook.new(session[:user][:token]).class.post('/me/feed', :query => {
         :message => @post["text"], 
         :picture => "#{root_url}images/artwork.jpg",
         :link => root_url,
@@ -20,8 +20,6 @@ class PostsController < ApplicationController
         :description => SETTINGS["description"]
         }
       )
-      
-      puts response.inspect
       
     elsif @post["service"] == "twitter"
       
