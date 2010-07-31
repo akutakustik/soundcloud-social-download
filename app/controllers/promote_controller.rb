@@ -10,8 +10,4 @@ class PromoteController < ApplicationController
 
   end
 
-  def email
-
-  end
-
 end
