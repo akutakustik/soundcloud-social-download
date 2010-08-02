@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
   
   def oauth_token(service, token, secret)
-    @oauth_token ||= OAuth::AccessToken.new(consumer(service), token, secret)
+    @oauth_token ||= OAuth::AccessToken.new(oauth_consumer(service), token, secret)
   end
   
   # OAUTH 2
