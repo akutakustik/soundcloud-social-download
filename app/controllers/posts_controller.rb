@@ -34,7 +34,13 @@ class PostsController < ApplicationController
   end
   
   def download
-    session[:download] ? redirect_to oauth_token("soundcloud", Settings.token, Settings.secret).get("#{SETTINGS["track"]}/download")["location"] : redirect_to root_path
+    
+    if session[:download]
+      redirect_to oauth_token("soundcloud", Settings.token, Settings.secret).get("#{SETTINGS["track"]}/download")["location"]
+    else
+      redirect_to root_path
+    end
+    
   end
 
 end
