@@ -21,8 +21,8 @@ class ApplicationController < ActionController::Base
     @oauth2_client ||= OAuth2::Client.new(config['facebook']['app_id'], config['facebook']['secret'], :site => config['facebook']['base_url'])
   end
   
-  def oauth2_token
-    
+  def oauth2_token(token)
+    @oauth2_token ||= OAuth2::AccessToken.new(oauth2_client, token)
   end
   
   # CONFIG
