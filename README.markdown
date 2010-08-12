@@ -50,3 +50,16 @@ Clone the application on your local computer by running the following command in
      git clone git@github.com:soundcloud/soundcloud-social-download.git project_name
 
 Now you're ready to do some configuring.
+
+# Configuration
+
+Configuring the application is simply done by editing the following files `auth.yml` `settings.yml` in the **config** folder.
+
+If you're looking for a decent text editor, try [TextMate](http://macromates.com/)
+
+### 1. Update Authentication File
+
+1. Input the following into `config/auth.yml`
+2. SoundCloud app **Consumer Key** and **Consumer Secret** into production > soundcloud > prokey & prosecret
+3. Facebook app **Application ID** and **Application Secret** into production > facebook > proappid & prosecret
+4. Twitter app **Consumer Key** and **Consumer Secret** into production > twitter > prokey & prosecret
