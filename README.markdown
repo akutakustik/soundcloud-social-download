@@ -91,3 +91,19 @@ You can further customize the aesthetics of your application by adjusting `appli
 * Change the _color_ of links and their hover effect in the `a` selector
 * Change the _color_ of headlines in the `h1, h2` selector
 * Change the _background_ gradient and _color_ of the button in the `button` selector
+
+# Deployment
+
+### Deploying on Heroku
+
+1. [Create a Heroku Account](http://heroku.com/signup)
+2. [Install the Heroku Gem](http://docs.heroku.com/heroku-command)
+3. And finally, [deploy it to Heroku](http://docs.heroku.com/quickstart#getting-your-app-on-heroku)
+
+# Tips and Tricks
+
+Coming Soon ;-)
+
+# Copyright
+
+**SoundCloud-Social-Download** is Copyright (c) 2010 [Lee Martin](http://Lee.Ma/rtin) and [SoundCloud](http://soundcloud.com), released under the MIT License.
