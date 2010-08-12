@@ -14,11 +14,11 @@ a{
 }
 a:hover{ color: #F50; }
 
-p, h1, h2, object{ margin: 10px 0; }
+p, h1, object{ margin: 10px 0; }
 
 h1, h2{ color: #06C; font-weight: normal; }
 
-h2{ margin-top: 0; }
+h2{ margin: 0 0 10px 0; }
 
 object{ -webkit-box-shadow: 0 0 20px grey; }
 
