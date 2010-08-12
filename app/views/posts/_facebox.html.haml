@@ -10,7 +10,7 @@
 		%h2.fl= SETTINGS[service]["header"]
 		%h2#count.fr= count - SETTINGS[service]["status"].length
 
-		%p.clear= f.text_area :text, :autocomplete => "off", :tabindex => "1", :onkeyup => "count(#{count});", :onFocus => "count(#{count});", :onBlur => "count(#{count});", :value => SETTINGS[service]["status"]
+		%p.clear= f.text_area :text, :autocomplete => "off", :onkeyup => "count(#{count});", :onFocus => "count(#{count});", :onBlur => "count(#{count});", :value => SETTINGS[service]["status"]
 	
 		%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
 		%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"
