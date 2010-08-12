@@ -31,7 +31,7 @@ Windows: [Follow these instructions](http://wiki.rubyonrails.org/getting-started
 2. Click **Connect** in the left column and add your *Connect URL* (url where your app will live), then click `Save Changes`
 3. Copy the **Application ID** and **Application Secret** to a text file for later
 
-### 5. Create a new Twitter application
+### 5. Register a new Twitter application
 
 1. [Go here](http://twitter.com/apps/new)
 2. Name your application and give it a *Description*
