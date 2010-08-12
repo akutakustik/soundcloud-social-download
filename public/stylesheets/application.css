@@ -1,7 +1,5 @@
 *{ margin: 0; padding: 0; }
 
-body, html { width: 100%; height: 100%; }
-
 body{
 	background: white url(/images/bg.png) repeat-x;
 	background-size: 100% 100%;
