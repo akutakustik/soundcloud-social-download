@@ -72,3 +72,22 @@ If you're looking for a decent text editor, try [TextMate](http://macromates.com
 4. You can also set your player **type**, **height**, and **width**
 5. Next input the promotion **header** and **instructions**
 6. Finally, adjust the **button**, **header**, and default **status** for both Facebook and Twitter.
+
+# Customize CSS & Images
+
+### Replace default images
+
+Replace the following images within the **public/images** folder with something that relates to your competition.
+
+* `bg.jpg`: background image
+* `logo.png`: logo that appears in the top center of your app. Replace with another _transparent png_ of your choosing.
+* `artwork.jpg`: a square _425 x 425_ pixel image used for sharing. This should be the image associated with your track (album cover, single cover, etc).
+
+### Adjust default CSS
+
+You can further customize the aesthetics of your application by adjusting `application.css` found within **public/stylesheets**. Here's a few ideas:
+
+* Change the _color_ and _font_ of text in the `body` selector
+* Change the _color_ of links and their hover effect in the `a` selector
+* Change the _color_ of headlines in the `h1, h2` selector
+* Change the _background_ gradient and _color_ of the button in the `button` selector
