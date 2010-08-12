@@ -63,3 +63,12 @@ If you're looking for a decent text editor, try [TextMate](http://macromates.com
 2. SoundCloud app **Consumer Key** and **Consumer Secret** into production > soundcloud > prokey & prosecret
 3. Facebook app **Application ID** and **Application Secret** into production > facebook > proappid & prosecret
 4. Twitter app **Consumer Key** and **Consumer Secret** into production > twitter > prokey & prosecret
+
+### 2. Update Settings File
+
+1. Input the following into `config/settings.yml`
+2. Your promotion **title**, **description**, and **track** url
+3. Customize the player **params** as needed (You can view a full list of parameters [here](http://wiki.github.com/soundcloud/Widget-JS-API/widget-options))
+4. You can also set your player **type**, **height**, and **width**
+5. Next input the promotion **header** and **instructions**
+6. Finally, adjust the **button**, **header**, and default **status** for both Facebook and Twitter.
