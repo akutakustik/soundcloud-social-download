@@ -56,7 +56,7 @@ class SessionsController < ApplicationController
         
           if user_id == track_user_id
           
-            flash[:notice] = "You have successfully connected with SoundCloud"
+            flash[:notice] = "You have successfully connected with SoundCloud."
           
             Settings.token, Settings.secret = access_token.token, access_token.secret
           
