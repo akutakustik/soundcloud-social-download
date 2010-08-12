@@ -33,6 +33,7 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 	-moz-border-radius: 100px; -webkit-border-radius: 100px;
 	border: 1px solid #CCC;
 	color: #000;
+	cursor: pointer;
 	display: inline-block;
 	font-size: 18px;
 	margin-top: 5px;
@@ -44,6 +45,12 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 .button:hover{
 	color: #06C;
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(white));
+}
+
+.update{
+	font-size: 12px;
+	margin: 0;
+	padding: 5px 10px;
 }
 
 .glow{

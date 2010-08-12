@@ -15,5 +15,5 @@
 		%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25
 		%div.fl{:style => "padding:5px 0 0 5px"}= "You're #{session[:user][:name]}"
 		%div.fr
-			= f.submit "Update"
+			= f.submit "Update", :class => "button update"
 		%div.clear
