@@ -37,7 +37,7 @@ Windows: [Follow these instructions](http://wiki.rubyonrails.org/getting-started
 2. *Name* your application and give it a *Description*
 3. Input your *Application Website* (url where your app will live)
 4. Add your artist name as *Organization* and your artist website url as *Website*
-5. Make with Browser is ticked on *Application Type*
+5. Make sure Browser is selected on *Application Type*
 6. Input your *Callback URL* (url where your app will live)
 7. Select Read & Write for *Default Access type*
 8. Click `Save`
