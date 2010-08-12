@@ -1,0 +1,41 @@
+# Promotion title, eg. Share to Download
+title: Share to Download
+
+# Competition description, eg. Share this track with your friends and get a free download.
+description: Share this track with your friends and get a free download.
+
+# SoundCloud URL of the track that will be streamed and offered as a download
+# You can create a new track at: http://soundcloud.com/tracks/new
+# Make sure to set it to Public, Streamable, and Not Downloadable.
+track: 
+
+# Default options used to display embedded player
+player:
+  
+  # You can view a full list of available params here: http://wiki.github.com/soundcloud/Widget-JS-API/widget-options
+  params: "&download=false&color=000000&text_buy_track=Free Download"
+  
+  # Type of player: standard, artwork, mini
+  type: artwork
+  
+  # The height and width of player in pixels
+  height: 350
+  width: 350
+  
+# Call to action that appears above instructions, eg. Free Download
+header: Free Download
+
+# Tell the user what to do eg. Click below to share this track and get a free download.
+instructions: "Click below to share this track and get a free download."
+
+# Default options related to Facebook sharing
+facebook:
+  button: Share to Download # button text
+  header: Share # popup header
+  status: 'is download a free track from LINK' # default status
+
+# Default options related to Twitter sharing
+twitter:
+  button: Tweet to Download # button text
+  header: Update Status # popup header
+  status: 'Check out LINK for a free download' # default status
