@@ -34,7 +34,7 @@ Windows: [Follow these instructions](http://wiki.rubyonrails.org/getting-started
 ### 5. Register a new Twitter application
 
 1. [Go here](http://twitter.com/apps/new)
-2. Name your application and give it a *Description*
+2. *Name* your application and give it a *Description*
 3. Input your *Application Website* (url where your app will live)
 4. Add your artist name as *Organization* and your artist website url as *Website*
 5. Make with Browser is ticked on *Application Type*
