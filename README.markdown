@@ -42,3 +42,11 @@ Windows: [Follow these instructions](http://wiki.rubyonrails.org/getting-started
 7. Select Read & Write for *Default Access type*
 8. Click `Save`
 9. Finally, copy the **Consumer Key** and **Consumer Secret** to a text file for later
+
+# Download
+
+Clone the application on your local computer by running the following command in your Terminal emulator. (Terminal on Mac, Console on Windows)
+
+     git clone git@github.com:soundcloud/soundcloud-social-download.git project_name
+
+Now you're ready to do some configuring.
