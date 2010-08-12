@@ -25,7 +25,7 @@ Windows: [Follow these instructions](http://wiki.rubyonrails.org/getting-started
 2. [Go here](http://soundcloud.com/you/apps/new), name your app, and click `Register`
 3. Copy the **Consumer Key** and **Consumer Secret** to a text file for later
 
-### 4. Create a new Facebook application
+### 4. Register a new Facebook application
 
 1. [Go here](http://www.facebook.com/developers/createapp.php), name your app, agree to terms, and click `Create Application`
 2. Click **Connect** in the left column and add your *Connect URL* (url where your app will live), then click `Save Changes`
