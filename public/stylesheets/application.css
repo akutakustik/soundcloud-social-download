@@ -3,9 +3,9 @@
 body, html { width: 100%; height: 100%; }
 
 body{
-	background: #000 url('/images/bg.jpg') top center no-repeat fixed;
+	background: white url(http://raindropapp.com/images/bg.png) repeat-x;
 	background-size: 100% 100%;
-	color: #FFF;
+	color: #333;
 	font: 14px 'Helvetica Neue', Helvetica, sans-serif;
 	text-align: center;
 }
@@ -18,13 +18,11 @@ a:hover{ color: #F50; }
 
 p, h1, h2, object{ margin: 10px 0; }
 
-h1{ color: #FFF; }
+h1, h2{ color: #06C; font-weight: normal; }
 
-h1, h2{ font-weight: normal; }
+h2{ margin-top: 0; }
 
-h2{ color: #06C; margin-top: 0; }
-
-object{ -webkit-box-shadow: 0 0 20px black; }
+object{ -webkit-box-shadow: 0 0 20px grey; }
 
 #logo{ margin: 30px 0 20px 0; }
 
@@ -33,6 +31,7 @@ object{ -webkit-box-shadow: 0 0 20px black; }
 .button{
 	background: #E3E3E3 -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#E3E3E3));
 	-moz-border-radius: 100px; -webkit-border-radius: 100px;
+	border: 1px solid #CCC;
 	color: #000;
 	display: inline-block;
 	font-size: 18px;
@@ -42,7 +41,10 @@ object{ -webkit-box-shadow: 0 0 20px black; }
 	text-decoration: none;
 }
 
-.button:hover{ background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(white)); }
+.button:hover{
+	color: #06C;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(white));
+}
 
 .glow{
 	-webkit-animation-name: Pulse;
