@@ -8,10 +8,8 @@ body{
 	text-align: center;
 }
 
-a{
-	color: #06C;
-	text-decoration: none;
-}
+a{ color: #06C; }
+
 a:hover{ color: #F50; }
 
 p, h1, object{ margin: 10px 0; }
@@ -24,7 +22,7 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 
 #logo{ margin: 30px 0 20px 0; }
 
-/* BUTTON & GLOW */
+/* Button & Glow Effect */
 
 .button{
 	background: #E3E3E3 -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#E3E3E3));
@@ -45,12 +43,6 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(white));
 }
 
-.update{
-	font-size: 12px;
-	margin: 0;
-	padding: 5px 10px;
-}
-
 .glow{
 	-webkit-animation-name: Pulse;
 	-webkit-animation-duration: 2s;
@@ -65,10 +57,11 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 	to { -webkit-box-shadow: 0 0 15px white; }
 }
 
-/* POPUP */
+/* Popup */
 
 #facebox {
 	background: #fff;
+	-moz-border-radius: 10px; -webkit-border-radius: 10px;
 	-webkit-box-shadow: #333 0 0 30px 0px;
   position: absolute;
   top: 0;
@@ -80,7 +73,7 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 
 #facebox .popup { position: relative; }
 
-#facebox .body { padding: 20px; }
+#facebox .body { padding: 15px 20px 20px 20px; }
 
 textarea{
 	font-size: 14px;
@@ -91,6 +84,12 @@ textarea{
 }
 
 textarea:focus{ outline: 5px auto #E3E3E3; }
+
+.update{
+	font-size: 12px;
+	margin: 0;
+	padding: 5px 10px;
+}
 
 #facebox_overlay {
   position: fixed;
