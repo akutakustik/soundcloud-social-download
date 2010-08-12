@@ -1,0 +1,50 @@
+development:
+  
+  soundcloud:
+    key: devkey
+    secret: devsecret
+    base_url: http://api.soundcloud.com
+  
+  twitter:
+    key: devkey
+    secret: devsecret
+    base_url: https://twitter.com
+  
+  facebook:
+    app_id: devappid
+    secret: devsecret
+    base_url: https://graph.facebook.com
+
+test:
+  
+  soundcloud:
+    key: testkey
+    secret: testsecret
+    base_url: http://api.soundcloud.com
+  
+  twitter:
+    key: testkey
+    secret: testsecret
+    base_url: https://twitter.com
+  
+  facebook:
+    app_id: testappid
+    secret: testsecret
+    base_url: https://graph.facebook.com
+
+production:
+  
+  soundcloud:
+    key: prokey
+    secret: prosecret
+    base_url: http://api.soundcloud.com
+  
+  twitter:
+    key: prokey
+    secret: prosecret
+    base_url: https://twitter.com
+  
+  facebook:
+    app_id: proappid
+    secret: prosecret
+    base_url: https://graph.facebook.com
