@@ -3,7 +3,7 @@
 body, html { width: 100%; height: 100%; }
 
 body{
-	background: white url(http://raindropapp.com/images/bg.png) repeat-x;
+	background: white url(/images/bg.png) repeat-x;
 	background-size: 100% 100%;
 	color: #333;
 	font: 14px 'Helvetica Neue', Helvetica, sans-serif;
