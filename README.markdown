@@ -104,7 +104,7 @@ You can further customize the aesthetics of your application by adjusting `appli
 
 You must connect the app to the SoundCloud account which owns the track you are offering for download.
 
-To do this, visit **yourapp.com/setup** and login with the appropriate SoundCloud account.
+To do this, visit **yourapp.com/activate** and login with the appropriate SoundCloud account.
 
 # Tips and Tricks
 
