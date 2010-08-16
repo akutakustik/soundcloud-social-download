@@ -100,6 +100,12 @@ You can further customize the aesthetics of your application by adjusting `appli
 2. [Install the Heroku Gem](http://docs.heroku.com/heroku-command)
 3. And finally, [deploy it to Heroku](http://docs.heroku.com/quickstart#getting-your-app-on-heroku)
 
+### Connect the App to Your SoundCloud Account
+
+You must connect the app to the SoundCloud account which owns the track you are offering for download.
+
+To do this, visit **yourapp.com/setup** and login with the appropriate SoundCloud account.
+
 # Tips and Tricks
 
 Coming Soon ;-)
