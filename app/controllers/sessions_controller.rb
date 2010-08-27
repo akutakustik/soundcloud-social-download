@@ -38,7 +38,11 @@ class SessionsController < ApplicationController
     
       session[:request_token], session[:request_token_secret] = nil
       
-      if params[:service] == "twitter"
+      if params[:service] == "digg"
+        
+        puts "Digg!"
+      
+      elsif params[:service] == "twitter"
         
         result = Crack::JSON.parse(access_token.get('/account/verify_credentials.json').body)
         
