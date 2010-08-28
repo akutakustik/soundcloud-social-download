@@ -2,8 +2,6 @@
 
 This app allows you to distribute a free SoundCloud track download in exchange for a social interaction, such as Sharing on Facebook and Tweeting on Twitter. Effectively creating a "Tweet/Share for Download" campaign. The default application has many customization options, but feel free to adjust and fork as needed. You can see an example of the default app running [here](http://soundcloud-social-download.heroku.com/).
 
-Adding Digg...
-
 # Prerequisites
 
 ### 1. Install Ruby, RubyGems, & Rails
@@ -27,13 +25,11 @@ Windows: [Follow these instructions](http://wiki.rubyonrails.org/getting-started
 2. [Go here](http://soundcloud.com/you/apps/new), name your app, and click `Register`
 3. Copy the **Consumer Key** and **Consumer Secret** to a text file for later
 
-### 4. Register a new Facebook application
+# Register Social Apps
 
-1. [Go here](http://www.facebook.com/developers/createapp.php), name your app, agree to terms, and click `Create Application`
-2. Click **Connect** in the left column and add your *Connect URL* (url where your app will live), then click `Save Changes`
-3. Copy the **Application ID** and **Application Secret** to a text file for later
+You'll need to create applications for each of the social services you wish to use on your promotion and copy the given **keys** and **secrets** for later. Current services are: Twitter, Facebook, and Digg
 
-### 5. Register a new Twitter application
+### 1. Register a new Twitter application
 
 1. [Go here](http://twitter.com/apps/new)
 2. *Name* your application and give it a *Description*
@@ -44,6 +40,16 @@ Windows: [Follow these instructions](http://wiki.rubyonrails.org/getting-started
 7. Select Read & Write for *Default Access type*
 8. Click `Save`
 9. Finally, copy the **Consumer Key** and **Consumer Secret** to a text file for later
+
+### 2. Register a new Facebook application
+
+1. [Go here](http://www.facebook.com/developers/createapp.php), name your app, agree to terms, and click `Create Application`
+2. Click **Connect** in the left column and add your *Connect URL* (url where your app will live), then click `Save Changes`
+3. Copy the **Application ID** and **Application Secret** to a text file for later
+
+### 3. Register a new Digg application
+
+Coming soon...
 
 # Download
 
@@ -63,8 +69,9 @@ If you're looking for a decent text editor, try [TextMate](http://macromates.com
 
 1. Input the following into `config/auth.yml`
 2. SoundCloud app **Consumer Key** and **Consumer Secret** into production > soundcloud > prokey & prosecret
-3. Facebook app **Application ID** and **Application Secret** into production > facebook > proappid & prosecret
-4. Twitter app **Consumer Key** and **Consumer Secret** into production > twitter > prokey & prosecret
+3. Twitter app **Consumer Key** and **Consumer Secret** into production > twitter > prokey & prosecret
+4. Facebook app **Application ID** and **Application Secret** into production > facebook > proappid & prosecret
+5. Digg app **Consumer Key** and **Consumer Secret** into production > digg > prokey & prosecret
 
 ### 2. Update Settings File
 
@@ -73,7 +80,8 @@ If you're looking for a decent text editor, try [TextMate](http://macromates.com
 3. Customize the player **params** as needed (You can view a full list of parameters [here](http://wiki.github.com/soundcloud/Widget-JS-API/widget-options))
 4. You can also set your player **type**, **height**, and **width**
 5. Next input the promotion **header** and **instructions**
-6. Finally, adjust the **button**, **header**, and default **status** for both Facebook and Twitter.
+6. Adjust the comma separated list of services to reflect which 3rd party sites you'll be using.
+7. Adjust the default social language such as **button**, **header**, and **status** for each service being used.  
 
 # Customize CSS & Images
 
