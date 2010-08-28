@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       
     elsif @post["service"] == "twitter"
       
-      oauth_token("twitter").post('/statuses/update.json', {:status => @post["text"]})
+      #oauth_token("twitter").post('/statuses/update.json', {:status => @post["text"]})
       
     elsif @post["service"] == "digg"
       

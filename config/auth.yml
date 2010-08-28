@@ -6,8 +6,8 @@ development:
     base_url: http://api.soundcloud.com
   
   twitter:
-    key: D9tonxAqgH73v3h3bIPNTA
-    secret: hfcEuzoHRSKDVzaPkxQZHrX3bDjOHnNtaGIEnMw
+    key: devkey
+    secret: devsecret
     base_url: https://twitter.com
   
   facebook:
@@ -16,8 +16,8 @@ development:
     base_url: https://graph.facebook.com
     
   digg:
-    key: f6ce5baaecd02fe76f4105ea6835acd8
-    secret: f2d11944ef3468ef83474e0b3f566e36
+    key: devkey
+    secret: devsecret
     base_url: http://digg.com
 
 test:
@@ -61,5 +61,5 @@ production:
     
   digg:
     key: prokey
-    secret: prosecret
+    secret: prosecre
     base_url: http://digg.com    
