@@ -28,10 +28,7 @@
 		
 	-else
 	
-		= link_to image_tag("facebook.png", :alt => "Facebook", :border => 0), login_path("facebook"), :class => "button", :title => "Login with Facebook"
-		
-		= link_to image_tag("twitter.png", :alt => "Twitter", :border => 0), login_path("twitter"), :class => "button", :title => "Login with Twitter"
-		
-		= link_to image_tag("digg.png", :alt => "Digg", :border => 0), login_path("digg"), :class => "button", :title => "Login with Digg"
+		- @services.each do |x|
+			= link_to image_tag("#{x}.png", :alt => x.capitalize, :border => 0), login_path(x), :class => "button", :title => "Login with #{x.capitalize}"
 	
 	= render "facebox" if session[:user]
