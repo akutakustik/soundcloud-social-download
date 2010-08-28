@@ -40,7 +40,9 @@ class SessionsController < ApplicationController
       
       if params[:service] == "myspace"
         
-        puts "MySpace!"
+        result = Crack::JSON.parse(access_token.get('/v2/people/@me/@self?format=json').body)["entry"]
+        
+        session[:user] = {:service => "myspace", :token => access_token.token, :secret => access_token.secret, :name => result["displayName"], :picture => result["thumbnailUrl"] || "http://x.myspacecdn.com/modules/common/static/img/no_pic.gif"}
       
       elsif params[:service] == "digg"
         
