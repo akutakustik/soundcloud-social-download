@@ -26,18 +26,6 @@ class ApplicationController < ActionController::Base
       )
       
     end
-    
-=begin
-
-@consumer = OAuth::Consumer.new("CONSUMER_KEY","CONSUMER_SECRET", {
-                :http_method=>"get",
-                :site=>"http://api.myspace.com",
-                :request_token_path=>"/request_token",
-                :access_token_path=>"/access_token",
-                :authorize_path=>"/authorize"
-        })
-        
-=end    
       
   end
   
