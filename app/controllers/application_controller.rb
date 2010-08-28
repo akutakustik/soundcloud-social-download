@@ -8,11 +8,36 @@ class ApplicationController < ActionController::Base
   # OAUTH
   
   def oauth_consumer(service)
+    
+    if service == "myspace"
+      
+      @oauth_consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'],
+        :http_method => "get",
+        :request_token_path => "/request_token",
+        :access_token_path => "/access_token",
+        :authorize_path => "/authorize"
+      )
+      
+    else
    
-    @oauth_consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'],
-      :request_token_url => ("http://services.digg.com/oauth/request_token" if service == "digg"),
-      :access_token_url => ("http://services.digg.com/oauth/access_token" if service == "digg")
-    )
+      @oauth_consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'],
+        :request_token_url => ("http://services.digg.com/oauth/request_token" if service == "digg"),
+        :access_token_url => ("http://services.digg.com/oauth/access_token" if service == "digg")
+      )
+      
+    end
+    
+=begin
+
+@consumer = OAuth::Consumer.new("CONSUMER_KEY","CONSUMER_SECRET", {
+                :http_method=>"get",
+                :site=>"http://api.myspace.com",
+                :request_token_path=>"/request_token",
+                :access_token_path=>"/access_token",
+                :authorize_path=>"/authorize"
+        })
+        
+=end    
       
   end
   

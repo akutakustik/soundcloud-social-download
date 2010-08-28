@@ -10,11 +10,11 @@ class SessionsController < ApplicationController
     
     else
       
-      request_token = oauth_consumer(params[:service]).get_request_token({:oauth_callback => oauth_callback_url(params[:service])})
+      request_token = oauth_consumer(params[:service]).get_request_token #({:oauth_callback => oauth_callback_url(params[:service])})
       
       session[:request_token], session[:request_token_secret] = request_token.token, request_token.secret
       
-      redirect_to request_token.authorize_url
+      redirect_to request_token.authorize_url + "&oauth_callback="+CGI.escape(oauth_callback_url(params[:service]))
       
     end 
     
@@ -38,7 +38,11 @@ class SessionsController < ApplicationController
     
       session[:request_token], session[:request_token_secret] = nil
       
-      if params[:service] == "digg"
+      if params[:service] == "myspace"
+        
+        puts "MySpace!"
+      
+      elsif params[:service] == "digg"
         
         result = Crack::JSON.parse(access_token.get('http://services.digg.com/2.0/user.getInfo').body)["user"]
         

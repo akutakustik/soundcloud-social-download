@@ -19,6 +19,11 @@ development:
     key: devkey
     secret: devsecret
     base_url: http://digg.com
+    
+  myspace:
+    key: 460993ec2a954a73b320482c7ba42243
+    secret: b7802f2c44bc49f9ad95a6c019f29d1b444eae4c1cb043c6b8fcf1244e60cf37
+    base_url: http://api.myspace.com
 
 test:
   
