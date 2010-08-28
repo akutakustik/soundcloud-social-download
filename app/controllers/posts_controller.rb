@@ -22,7 +22,21 @@ class PostsController < ApplicationController
       
     elsif @post["service"] == "twitter"
       
-      oauth_token("twitter", session[:user][:token], session[:user][:secret]).post('/statuses/update.json', {:status => @post["text"]})
+      oauth_token("twitter").post('/statuses/update.json', {:status => @post["text"]})
+      
+    elsif @post["service"] == "digg"
+      
+      @story = Crack::JSON.parse(oauth_token("digg").get("http://services.digg.com/2.0/story.getInfo?links=#{root_url}").body)["stories"][0]
+      
+      if @story
+      
+        puts oauth_token("digg").get("http://services.digg.com/2.0/story.digg", {'story_id' => @story["story_id"]})
+        
+        if not @post[:text].empty? && @post[:text] != "Leave a Comment..."
+          puts oauth_token("digg").post("http://services.digg.com/2.0/comment.post", {'story_id' => @story["story_id"], 'comment_text' => @post[:text]})
+        end
+        
+      end
       
     end
     
@@ -35,7 +49,7 @@ class PostsController < ApplicationController
   def download
     
     if session[:download]
-      redirect_to oauth_token("soundcloud", Settings.token, Settings.secret).get("#{SETTINGS["track"]}/download")["location"]
+      redirect_to oauth_token("soundcloud").get("#{SETTINGS["track"]}/download")["location"]
     else
       redirect_to root_path
     end

@@ -7,7 +7,7 @@ description: Share this track with your friends and get a free download.
 # SoundCloud URL of the track that will be streamed and offered as a download
 # You can create a new track at: http://soundcloud.com/tracks/new
 # Make sure to set it to Public, Streamable, and Not Downloadable.
-track: 
+track: http://soundcloud.com/leemartin/disturbed
 
 # Default options used to display embedded player
 player:
@@ -26,7 +26,7 @@ player:
 header: Free Download
 
 # Tell the user what to do eg. Click below to share this track and get a free download.
-instructions: "Click below to share this track and get a free download."
+instructions: "Click below to share or digg this track and get a free download."
 
 # Default options related to Facebook sharing
 facebook:
@@ -39,3 +39,9 @@ twitter:
   button: Tweet to Download # button text
   header: Update Status # popup header
   status: 'Check out LINK for a free download' # default status
+  
+# Default options related to Digg sharing
+digg:
+  button: Digg to Download
+  header: Digg This Track
+  status: Leave a Comment...

@@ -14,6 +14,11 @@ development:
     app_id: devappid
     secret: devsecret
     base_url: https://graph.facebook.com
+    
+  digg:
+    key: f6ce5baaecd02fe76f4105ea6835acd8
+    secret: f2d11944ef3468ef83474e0b3f566e36
+    base_url: http://digg.com
 
 test:
   
@@ -31,6 +36,11 @@ test:
     app_id: testappid
     secret: testsecret
     base_url: https://graph.facebook.com
+    
+  digg:
+    key: testkey
+    secret: testsecret
+    base_url: http://digg.com
 
 production:
   
@@ -48,3 +58,8 @@ production:
     app_id: proappid
     secret: prosecret
     base_url: https://graph.facebook.com
+    
+  digg:
+    key: prokey
+    secret: prosecret
+    base_url: http://digg.com    

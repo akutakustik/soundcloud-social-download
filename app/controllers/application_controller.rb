@@ -8,11 +8,26 @@ class ApplicationController < ActionController::Base
   # OAUTH
   
   def oauth_consumer(service)
-    @oauth_consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'])
+   
+    if service == "digg"
+      @oauth_consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'],
+        :request_token_url => "http://services.digg.com/oauth/request_token",
+        :access_token_url => "http://services.digg.com/oauth/access_token"
+      )
+    else
+      @oauth_consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'])
+    end
+      
   end
   
-  def oauth_token(service, token, secret)
-    @oauth_token ||= OAuth::AccessToken.new(oauth_consumer(service), token, secret)
+  def oauth_token(service)
+    
+    if service == "soundcloud"
+      @oauth_token ||= OAuth::AccessToken.new(oauth_consumer(service), Settings.token, Settings.secret)
+    else
+      @oauth_token ||= OAuth::AccessToken.new(oauth_consumer(service), session[:user][:token], session[:user][:secret])
+    end
+    
   end
   
   # OAUTH 2

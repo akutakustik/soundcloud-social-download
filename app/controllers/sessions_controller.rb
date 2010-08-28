@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     
       redirect_to oauth2_client.web_server.authorize_url(:redirect_uri => oauth_callback_url("facebook"), :scope => 'publish_stream')
     
-    else  
+    else
       
       request_token = oauth_consumer(params[:service]).get_request_token({:oauth_callback => oauth_callback_url(params[:service])})
       
@@ -40,7 +40,9 @@ class SessionsController < ApplicationController
       
       if params[:service] == "digg"
         
-        puts "Digg!"
+        result = Crack::JSON.parse(access_token.get('http://services.digg.com/2.0/user.getInfo').body)["user"]
+        
+        session[:user] = {:service => "digg", :token => access_token.token, :secret => access_token.secret, :name => result["username"], :picture => result["icon"] || "http://cdn4.diggstatic.com/img/user/p.a83ec048.png"}
       
       elsif params[:service] == "twitter"
         

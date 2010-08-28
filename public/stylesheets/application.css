@@ -33,7 +33,7 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 	display: inline-block;
 	font-size: 18px;
 	margin-top: 5px;
-	padding: 7px 30px 8px 30px;
+	padding: 7px 15px 8px 15px;
 	position: relative;
 	text-decoration: none;
 }
