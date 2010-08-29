@@ -49,7 +49,13 @@ You'll need to create applications for each of the social services you wish to u
 
 ### 3. Register a new MySpace application
 
-Coming soon...
+1. [Go here](http://developer.myspace.com/modules/apps/pages/CreateAppAccount.aspx) and click `Create MySpaceID App`
+2. Give your application a **Title**, agree to the terms, and click `Next`
+3. Add a short **Description** to your app and scroll down to _External Site Settings_
+4. Input your **External URL** (url where your app will live)
+5. Then input your **External Callback Validation** (url to your app + '/oauth_callback/myspace')
+6. Agree to the terms and click `Save`
+7. Scroll down to _OAuth Settings_ and copy the **Consumer Key** and **Consumer Secret** to a text file for later
 
 ### 4. Register a new Digg application
 
