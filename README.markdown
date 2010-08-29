@@ -47,7 +47,11 @@ You'll need to create applications for each of the social services you wish to u
 2. Click **Connect** in the left column and add your *Connect URL* (url where your app will live), then click `Save Changes`
 3. Copy the **Application ID** and **Application Secret** to a text file for later
 
-### 3. Register a new Digg application
+### 3. Register a new MySpace application
+
+Coming soon...
+
+### 4. Register a new Digg application
 
 Coming soon...
 
@@ -68,10 +72,11 @@ If you're looking for a decent text editor, try [TextMate](http://macromates.com
 ### 1. Update Authentication File
 
 1. Input the following into `config/auth.yml`
-2. SoundCloud app **Consumer Key** and **Consumer Secret** into production > soundcloud > prokey & prosecret
-3. Twitter app **Consumer Key** and **Consumer Secret** into production > twitter > prokey & prosecret
-4. Facebook app **Application ID** and **Application Secret** into production > facebook > proappid & prosecret
-5. Digg app **Consumer Key** and **Consumer Secret** into production > digg > prokey & prosecret
+2. SoundCloud **Consumer Key** and **Consumer Secret** into production > soundcloud > prokey & prosecret
+3. Twitter **Consumer Key** and **Consumer Secret** into production > twitter > prokey & prosecret
+4. Facebook **Application ID** and **Application Secret** into production > facebook > proappid & prosecret
+5. MySpace **Consumer Key** and **Consumer Secret** into production > myspace > prokey & prosecret
+6. Digg **Consumer Key** and **Consumer Secret** into production > digg > prokey & prosecret
 
 ### 2. Update Settings File
 
