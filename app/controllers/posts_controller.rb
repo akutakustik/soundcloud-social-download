@@ -46,7 +46,7 @@ class PostsController < ApplicationController
       
     end
     
-    #session[:download] = true
+    session[:download] = true
     
     redirect_to root_path
     

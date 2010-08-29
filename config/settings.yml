@@ -29,7 +29,7 @@ header: Free Download
 instructions: "Click below to share or digg this track and get a free download."
 
 # Comma seperated list of services you will use
-services: "facebook,twitter,digg,myspace"
+services: "facebook,twitter,myspace,digg"
 
 # Default options related to Facebook sharing
 facebook:
