@@ -129,7 +129,7 @@ To do this, visit **yourapp.com/activate** and login with the appropriate SoundC
 
 # Tips and Tricks
 
-Coming Soon ;-)
+Coming Soon...
 
 # Copyright
 
