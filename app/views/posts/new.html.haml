@@ -22,5 +22,6 @@
 		
 	- else
 	
-		- @services.each do |x|
+		- SETTINGS["services"].split(',').each do |x|
+			
 			= link_to image_tag("#{x}.png", :alt => x.capitalize, :border => 0), login_path(x), :class => "button", :title => "Login with #{x.capitalize}"

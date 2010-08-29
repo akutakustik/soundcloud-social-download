@@ -2,8 +2,6 @@ class PostsController < ApplicationController
   
   def new
     
-    @services = SETTINGS["services"].split(',')
-    
   end
 
   def create
