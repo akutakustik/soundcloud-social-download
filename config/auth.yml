@@ -1,13 +1,13 @@
 development:
   
   soundcloud:
-    key: gA1NPzrmFSbItdAZx9yvUA
-    secret: FQwA6aZt6ZjlVNl1S9WapX7ALVmr7ygKT1UWfkr6ck
+    key: devkey
+    secret: devsecret
     base_url: http://api.soundcloud.com
   
   twitter:
-    key: MPsR0FsHXW9VULYBesunA
-    secret: FlCSqUefOmVe73kASPrcc6ljJAmkSCC7IvOq8l0tvw
+    key: devkey
+    secret: devsecret
     base_url: https://twitter.com
   
   facebook:
@@ -21,8 +21,8 @@ development:
     base_url: http://digg.com
     
   myspace:
-    key: 460993ec2a954a73b320482c7ba42243
-    secret: b7802f2c44bc49f9ad95a6c019f29d1b444eae4c1cb043c6b8fcf1244e60cf37
+    key: devkey
+    secret: devsecret
     base_url: http://api.myspace.com
 
 test:
@@ -46,6 +46,11 @@ test:
     key: testkey
     secret: testsecret
     base_url: http://digg.com
+    
+  myspace:
+    key: testkey
+    secret: testsecret
+    base_url: http://api.myspace.com    
 
 production:
   
@@ -67,4 +72,9 @@ production:
   digg:
     key: prokey
     secret: prosecre
-    base_url: http://digg.com    
+    base_url: http://digg.com
+
+  myspace:
+    key: prokey
+    secret: prosecret
+    base_url: http://api.myspace.com
