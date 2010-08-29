@@ -40,9 +40,15 @@ class PostsController < ApplicationController
         
       end
       
+    elsif @post["service"] == "myspace"
+      
+      result = Crack::JSON.parse(oauth_token("myspace").get('/v1/user.json').body)
+
+      puts oauth_token("myspace").post("/v1/users/#{result["userId"]}/status", {'status' => @post[:text]}, {'X-HTTP-Method-Override' => 'PUT'})
+      
     end
     
-    session[:download] = true
+    #session[:download] = true
     
     redirect_to root_path
     
