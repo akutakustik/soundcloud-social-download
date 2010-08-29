@@ -6,8 +6,8 @@ development:
     base_url: http://api.soundcloud.com
   
   twitter:
-    key: devkey
-    secret: devsecret
+    key: MPsR0FsHXW9VULYBesunA
+    secret: FlCSqUefOmVe73kASPrcc6ljJAmkSCC7IvOq8l0tvw
     base_url: https://twitter.com
   
   facebook:
