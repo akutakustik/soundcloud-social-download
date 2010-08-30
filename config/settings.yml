@@ -7,7 +7,7 @@ description: Share this track with your friends and get a free download.
 # SoundCloud URL of the track that will be streamed and offered as a download
 # You can create a new track at: http://soundcloud.com/tracks/new
 # Make sure to set it to Public, Streamable, and Not Downloadable.
-track: http://soundcloud.com/leemartin/test
+track: 
 
 # Default options used to display embedded player
 player:
