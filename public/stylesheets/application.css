@@ -108,9 +108,6 @@ table#users {
   height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px'); }
 
 /* GLOW */
-.test font {
-  family: Arial; }
-
 .glow {
   -webkit-animation-name: Pulse;
   -webkit-animation-duration: 2s;
