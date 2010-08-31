@@ -118,7 +118,14 @@ table#users{
 
 /* GLOW */
 
+.test{
+	font{
+		family: Arial
+	}
+}
+
 .glow{
+	
 	-webkit-animation-name: Pulse;
 	-webkit-animation-duration: 2s;
 	-webkit-animation-iteration-count: infinite;
