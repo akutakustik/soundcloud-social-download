@@ -15,15 +15,15 @@ development:
     secret: devsecret
     base_url: https://graph.facebook.com
     
+  myspace:
+    key: devkey
+    secret: devsecret
+    base_url: http://api.myspace.com    
+    
   digg:
     key: devkey
     secret: devsecret
     base_url: http://digg.com
-    
-  myspace:
-    key: devkey
-    secret: devsecret
-    base_url: http://api.myspace.com
 
 test:
   
@@ -42,15 +42,15 @@ test:
     secret: testsecret
     base_url: https://graph.facebook.com
     
-  digg:
-    key: testkey
-    secret: testsecret
-    base_url: http://digg.com
-    
   myspace:
     key: testkey
     secret: testsecret
     base_url: http://api.myspace.com    
+    
+  digg:
+    key: testkey
+    secret: testsecret
+    base_url: http://digg.com
 
 production:
   
@@ -69,12 +69,12 @@ production:
     secret: prosecret
     base_url: https://graph.facebook.com
     
+  myspace:
+    key: prokey
+    secret: prosecret
+    base_url: http://api.myspace.com    
+    
   digg:
     key: prokey
     secret: prosecre
     base_url: http://digg.com
-
-  myspace:
-    key: prokey
-    secret: prosecret
-    base_url: http://api.myspace.com
