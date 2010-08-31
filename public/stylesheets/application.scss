@@ -51,19 +51,21 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 	
 }
 
-/* Users Table */
+/* USERS */
 
 table#users{
+	
 	border-collapse: collapse;
 	width: 100%;
+	
+	th, td{
+		border: 1px solid #CCC;
+		padding: 10px;
+	}
+	
 }
 
-table#users th, table#users td{
-	border: 1px solid #CCC;
-	padding: 10px;
-}
-
-/* Popup */
+/* POPUP */
 
 #facebox {
 	
