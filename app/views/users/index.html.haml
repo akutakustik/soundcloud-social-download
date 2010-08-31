@@ -5,8 +5,8 @@
 		%th Email
 		%th Location
 	
-	%tr	
-		- @users.each do |user|
+	- @users.each do |user|
+		%tr	
 			%td= user.service
 			%td= user.name
 			%td= user.email
