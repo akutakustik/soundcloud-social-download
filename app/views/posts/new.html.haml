@@ -16,9 +16,9 @@
 	
 	- if session[:user] && session[:user][:service] != "soundcloud"
 	
-		= link_to SETTINGS[session[:user][:service]]["button"], "#form", :class => "button", :rel => "facebox"
+		= link_to SETTINGS[session[:user][:service]]["button"], "#post", :class => "button", :rel => "facebox"
 		
-		= render "facebox"
+		= render "form"
 		
 	- else
 	

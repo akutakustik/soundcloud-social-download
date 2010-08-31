@@ -1,7 +1,7 @@
 - service = session[:user][:service]
 - service == "facebook" ? count = 420 : count = 140
 
-%div#form{:style => "display:none"}
+%div#post{:style => "display:none"}
 
 	- form_for "post", :url => posts_path do |f|
 
