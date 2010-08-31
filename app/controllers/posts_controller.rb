@@ -30,10 +30,10 @@ class PostsController < ApplicationController
       
       if @story
       
-        puts oauth_token("digg").get("http://services.digg.com/2.0/story.digg", {'story_id' => @story["story_id"]})
+        oauth_token("digg").get("http://services.digg.com/2.0/story.digg", {'story_id' => @story["story_id"]})
         
         if not @post[:text].empty? && @post[:text] != "Leave a Comment..."
-          puts oauth_token("digg").post("http://services.digg.com/2.0/comment.post", {'story_id' => @story["story_id"], 'comment_text' => @post[:text]})
+          oauth_token("digg").post("http://services.digg.com/2.0/comment.post", {'story_id' => @story["story_id"], 'comment_text' => @post[:text]})
         end
         
       end
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
       
       result = Crack::JSON.parse(oauth_token("myspace").get('/v1/user.json').body)
 
-      puts oauth_token("myspace").post("/v1/users/#{result["userId"]}/status", {'status' => @post[:text]}, {'X-HTTP-Method-Override' => 'PUT'})
+      oauth_token("myspace").post("/v1/users/#{result["userId"]}/status", {'status' => @post[:text]}, {'X-HTTP-Method-Override' => 'PUT'})
       
     end
     
