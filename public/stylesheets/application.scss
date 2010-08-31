@@ -96,19 +96,17 @@ table#users th, table#users td{
 		&:focus{ outline: 5px auto #E3E3E3; }
 	}
 	
+	#facebox_overlay {
+	  position: fixed;
+	  top: 0px; left: 0px;
+	  height: 100%; width: 100%;
+	}
+	
+	.facebox_hide{ z-index: -100; }
+	
+	.facebox_overlayBG { background-color: #000; z-index: 99; }
+	
 }
-
-#facebox_overlay {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-}
-
-.facebox_hide { z-index: -100; }
-
-.facebox_overlayBG { background-color: #000; z-index: 99; }
 
 * html #facebox_overlay { /* ie6 hack */
   position: absolute;
