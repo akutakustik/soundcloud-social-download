@@ -46,6 +46,8 @@ class PostsController < ApplicationController
       
     end
     
+    # Create new user with Service, Name, Location ...
+    
     session[:download] = true
     
     redirect_to root_path
