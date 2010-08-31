@@ -28,6 +28,7 @@
 			
 		- if SETTINGS["email"]
 			
-			%p <em>or</em> #{link_to "Submit Your Email", "#user", :rel => "facebox"}
+			%p 
+				%small You may also #{link_to "Submit Your Email", "#user", :rel => "facebox"} to download
 			
 			= render "users/form"
