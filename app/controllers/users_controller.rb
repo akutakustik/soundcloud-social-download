@@ -2,7 +2,11 @@ class UsersController < ApplicationController
 
   def index
     
-    @users = User.all
+    if session[:user] && session[:user][:service] == "soundcloud"
+      @users = User.all
+    else
+      redirect_to login_path("soundcloud")
+    end
     
   end
   
