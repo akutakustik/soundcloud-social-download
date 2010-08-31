@@ -26,6 +26,7 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 /* Button & Glow Effect */
 
 .button{
+	
 	background: #E3E3E3 -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), to(#E3E3E3));
 	-moz-border-radius: 100px; -webkit-border-radius: 100px;
 	border: 1px solid #CCC;
@@ -37,11 +38,12 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 	padding: 7px 15px 8px 15px;
 	position: relative;
 	text-decoration: none;
-}
-
-.button:hover{
-	color: #06C;
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(#FFFFFF));
+	
+	&:hover{
+		color: #06C;
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(#FFFFFF));
+	}
+	
 }
 
 .glow{
