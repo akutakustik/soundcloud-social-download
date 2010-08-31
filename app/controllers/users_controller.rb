@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       #session[:download] = true
       redirect_to root_path
     else
+      flash[:error] = @user.errors.full_messages
       redirect_to root_path
     end
     
