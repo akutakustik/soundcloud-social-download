@@ -32,9 +32,9 @@ object {
 /* BUTTON */
 .button {
   background: #e3e3e3 -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e3e3e3));
+  border: 1px solid #CCC;
   -moz-border-radius: 100px;
   -webkit-border-radius: 100px;
-  border: 1px solid #CCC;
   color: #000;
   cursor: pointer;
   display: inline-block;

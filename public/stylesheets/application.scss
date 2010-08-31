@@ -27,8 +27,8 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 .button{
 	
 	background: #E3E3E3 -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), to(#E3E3E3));
-	-moz-border-radius: 100px; -webkit-border-radius: 100px;
 	border: 1px solid #CCC;
+	-moz-border-radius: 100px; -webkit-border-radius: 100px;
 	color: #000;
 	cursor: pointer;
 	display: inline-block;
