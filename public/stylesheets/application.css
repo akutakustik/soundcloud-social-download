@@ -85,6 +85,14 @@ textarea{
 
 textarea:focus{ outline: 5px auto #E3E3E3; }
 
+#user_email{
+	font-size: 14px;
+	padding: 5px;
+	width: 448px;
+}
+
+#user_email:focus{ outline: 5px auto #E3E3E3; }
+
 .update{
 	font-size: 12px;
 	margin: 0;
