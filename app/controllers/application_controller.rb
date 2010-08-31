@@ -18,12 +18,16 @@ class ApplicationController < ActionController::Base
         :authorize_path => "/authorize"
       )
       
+    elsif service == "digg"
+      
+      @oauth_consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'],
+        :request_token_url => "http://services.digg.com/oauth/request_token",
+        :access_token_url => "http://services.digg.com/oauth/access_token"
+      )
+      
     else
    
-      @oauth_consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'],
-        :request_token_url => ("http://services.digg.com/oauth/request_token" if service == "digg"),
-        :access_token_url => ("http://services.digg.com/oauth/access_token" if service == "digg")
-      )
+      @oauth_consumer ||= OAuth::Consumer.new(config[service]['key'], config[service]['secret'], :site => config[service]['base_url'])
       
     end
       
