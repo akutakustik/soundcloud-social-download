@@ -19,8 +19,8 @@ player:
   type: artwork
   
   # The height and width of player in pixels
-  height: 350
-  width: 350
+  height: 300
+  width: 300
   
 # Call to action that appears above instructions, eg. Free Download
 header: Free Download

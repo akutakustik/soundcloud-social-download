@@ -11,10 +11,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      flash[:notice] = 'User was successfully created.'
-      redirect_to(@user)
+      #session[:download] = true
+      redirect_to root_path
     else
-      render :action => "new"
+      redirect_to root_path
     end
     
   end
