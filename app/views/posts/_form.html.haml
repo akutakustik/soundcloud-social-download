@@ -20,7 +20,7 @@
 		%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25, :style => "border: 1px solid #CCC;"
 		
 		%div.fl{:style => "padding:5px 0 0 5px"} You're <strong>#{session[:user][:name]}</strong> - #{link_to "Sign out?", logout_path}
-			
-		%div.fr= service == "digg" ? f.submit("Digg", :class => "button small") : f.submit("Update", :class => "button small")
+		
+		%div.fr= f.submit SETTINGS["service"]["submit"], :class => "button small"
 				
 		%div.clear

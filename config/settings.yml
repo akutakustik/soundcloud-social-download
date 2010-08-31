@@ -39,21 +39,25 @@ facebook:
   button: Share to Download # button text
   header: Share this Track # popup header
   status: 'is downloading a free track from LINK' # default status
+  submit: Share # submit button
 
 # Default options related to Twitter sharing
 twitter:
   button: Tweet to Download # button text
   header: Tweet this Track # popup header
   status: 'Check out LINK for a free download' # default status
+  submit: Tweet
   
 # Default options related to MySpace sharing
 myspace:
   button: Share to Download # button text
   header: Share this Track # popup header
   status: 'is downloading a free track from LINK' # default status
+  submit: Share
   
 # Default options related to Digg sharing
 digg:
   button: Digg to Download
   header: Digg this Track
   status: 'Leave a Comment...'
+  submit: Digg
