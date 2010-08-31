@@ -55,9 +55,9 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 }
 
 @-webkit-keyframes Pulse {
-	from { -webkit-box-shadow: 0 0 15px white; }
-	50% { -webkit-box-shadow: 0 0 15px grey; }
-	to { -webkit-box-shadow: 0 0 15px white; }
+	from { -webkit-box-shadow: 0 0 15px #FFFFFF; }
+	50% { -webkit-box-shadow: 0 0 15px #E3E3E3; }
+	to { -webkit-box-shadow: 0 0 15px #FFFFFF; }
 }
 
 /* Users Table */
