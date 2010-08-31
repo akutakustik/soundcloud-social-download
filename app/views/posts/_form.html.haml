@@ -9,12 +9,14 @@
 
 		%h2.fl= SETTINGS[service]["header"]
 		
-		- if not service == "digg"
-			%h2#count.fr= count - SETTINGS[service]["status"].length
+		%h2#count.fr= count - SETTINGS[service]["status"].length if not service == "digg"
 
 		- if service == "digg"
+		
 			%p= f.text_area :text, :value => SETTINGS[service]["status"], :onFocus => '(this.value == "' + SETTINGS[service]["status"] + '") ? this.value = "" : this.value'
+			
 		- else
+		
 			%p.clear= f.text_area :text, :autocomplete => "off", :onkeyup => "count(#{count});", :onFocus => "count(#{count});", :onBlur => "count(#{count});", :value => SETTINGS[service]["status"]
 
 		%div.fl= image_tag session[:user][:picture], :height => 25, :width => 25, :style => "border: 1px solid #CCC;"
