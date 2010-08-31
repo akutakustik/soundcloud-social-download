@@ -28,6 +28,9 @@ header: Free Download
 # Tell the user what to do eg. Click below to share this track and get a free download.
 instructions: "Click below to share or digg this track and get a free download"
 
+# Add email submission as an alternative
+email: true
+
 # Comma seperated list of services you will use
 services: "facebook,twitter,myspace,digg"
 
