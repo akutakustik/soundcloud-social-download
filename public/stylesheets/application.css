@@ -13,6 +13,9 @@ a {
   a:hover {
     color: #F50; }
 
+em {
+  color: #959595; }
+
 p, h1, object {
   margin: 10px 0; }
 
