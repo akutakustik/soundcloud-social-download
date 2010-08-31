@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     
     if @post["service"] == "facebook"
       
-      oauth2_token(session[:user][:token]).post('/me/feed', {
+      oauth2_token.post('/me/feed', {
         :message => @post["text"], 
         :picture => "#{root_url}images/artwork.jpg",
         :link => root_url,
