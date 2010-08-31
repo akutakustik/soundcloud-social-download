@@ -43,6 +43,12 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(#FFFFFF));
 	}
 	
+	&.small{
+		font-size: 12px;
+		margin: 0;
+		padding: 5px 10px;
+	}
+	
 }
 
 /* Users Table */
@@ -90,12 +96,6 @@ table#users th, table#users td{
 		&:focus{ outline: 5px auto #E3E3E3; }
 	}
 	
-}
-
-.update{
-	font-size: 12px;
-	margin: 0;
-	padding: 5px 10px;
 }
 
 #facebox_overlay {

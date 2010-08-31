@@ -21,6 +21,6 @@
 		
 		%div.fl{:style => "padding:5px 0 0 5px"} You're <strong>#{session[:user][:name]}</strong> - #{link_to "Sign out?", logout_path}
 			
-		%div.fr= service == "digg" ? f.submit("Digg", :class => "button update") : f.submit("Update", :class => "button update")
+		%div.fr= service == "digg" ? f.submit("Digg", :class => "button small") : f.submit("Update", :class => "button small")
 				
 		%div.clear
