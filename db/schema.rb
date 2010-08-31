@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100725195715) do
+ActiveRecord::Schema.define(:version => 20100831200227) do
 
   create_table "settings", :force => true do |t|
     t.string   "var",        :null => false
@@ -19,5 +19,15 @@ ActiveRecord::Schema.define(:version => 20100725195715) do
   end
 
   add_index "settings", ["var"], :name => "index_settings_on_var"
+
+  create_table "users", :force => true do |t|
+    t.string   "service"
+    t.string   "user_id"
+    t.string   "name"
+    t.string   "email"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
