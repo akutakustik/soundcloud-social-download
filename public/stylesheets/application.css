@@ -57,6 +57,16 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 	to { -webkit-box-shadow: 0 0 15px white; }
 }
 
+/* Users Table */
+
+#users{
+	border-collapse: collapse;
+}
+
+#users th, #users td{
+	border: 1px solid #CCC;
+}
+
 /* Popup */
 
 #facebox {
