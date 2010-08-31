@@ -1,0 +1,13 @@
+%table
+	%tr
+		%th Service
+		%th Name
+		%th Email
+		%th Location
+	
+	%tr	
+		- @users.each do |user|
+			%td= user.service
+			%td= user.name
+			%td= user.email
+			%td= user.location
