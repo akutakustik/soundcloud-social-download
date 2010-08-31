@@ -8,9 +8,10 @@ body{
 	text-align: center;
 }
 
-a{ color: #06C; }
-
-a:hover{ color: #F50; }
+a{
+	color: #06C;
+	&:hover{ color: #F50; }
+}
 
 p, h1, object{ margin: 10px 0; }
 
@@ -25,7 +26,7 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 /* Button & Glow Effect */
 
 .button{
-	background: #E3E3E3 -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#E3E3E3));
+	background: #E3E3E3 -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), to(#E3E3E3));
 	-moz-border-radius: 100px; -webkit-border-radius: 100px;
 	border: 1px solid #CCC;
 	color: #000;
@@ -40,7 +41,7 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 
 .button:hover{
 	color: #06C;
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(white));
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3E3E3), to(#FFFFFF));
 }
 
 .glow{
