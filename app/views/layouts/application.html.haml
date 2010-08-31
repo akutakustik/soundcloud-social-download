@@ -17,7 +17,10 @@
 		
 	%body
 	
-		%p#notice= flash[:notice] if flash[:notice]
-		%p#error= flash[:error] if flash[:error]
+		- if flash[:notice]
+			%p#notice= flash[:notice]
+			
+		- if flash[:error]
+			%p#error= flash[:error] 
 		
 		= yield

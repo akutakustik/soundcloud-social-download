@@ -59,12 +59,14 @@ object{ -webkit-box-shadow: 0 0 20px grey; }
 
 /* Users Table */
 
-#users{
+table#users{
 	border-collapse: collapse;
+	width: 100%;
 }
 
-#users th, #users td{
+table#users th, table#users td{
 	border: 1px solid #CCC;
+	padding: 10px;
 }
 
 /* Popup */
