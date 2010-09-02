@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      #session[:download] = true
+      session[:download] = true
       redirect_to root_path
     else
       flash[:error] = @user.errors.full_messages
