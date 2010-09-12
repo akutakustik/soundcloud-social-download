@@ -3,4 +3,5 @@
 		%param{:name => 'bgcolor', :value => '000000'}
 		%param{:name => 'movie', :value => "http://player.soundcloud.com/player.swf?url="+SETTINGS["track"]+SETTINGS["player"]["params"]+"&player_type="+SETTINGS["player"]["type"]}
 		%param{:name => 'allowscriptaccess', :value => 'always'}
-		%embed{:allowscriptaccess => 'always', :height => SETTINGS["player"]["height"], :src => "http://player.soundcloud.com/player.swf?url="+SETTINGS["track"]+SETTINGS["player"]["params"]+"&player_type="+SETTINGS["player"]["type"], :type => 'application/x-shockwave-flash', :width => SETTINGS["player"]["width"], :bgcolor => '000000'}
+		%param{:name => 'wmode', :value => 'transparent'}
+		%embed{:wmode => 'transparent', :allowscriptaccess => 'always', :height => SETTINGS["player"]["height"], :src => "http://player.soundcloud.com/player.swf?url="+SETTINGS["track"]+SETTINGS["player"]["params"]+"&player_type="+SETTINGS["player"]["type"], :type => 'application/x-shockwave-flash', :width => SETTINGS["player"]["width"], :bgcolor => '000000'}
